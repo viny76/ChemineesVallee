@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FBD877642E4A6093C8FB717 /* libPods-ChemineesVallee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8378F5FCE77F9FAE1A65F81 /* libPods-ChemineesVallee.a */; };
 		2C25FF6B1D90321D003819A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25FF6A1D90321D003819A9 /* main.m */; };
 		2C25FF6E1D90321D003819A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25FF6D1D90321D003819A9 /* AppDelegate.m */; };
-		2C25FF711D90321D003819A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25FF701D90321D003819A9 /* ViewController.m */; };
+		2C25FF711D90321D003819A9 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25FF701D90321D003819A9 /* ScanViewController.m */; };
 		2C25FF741D90321D003819A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C25FF721D90321D003819A9 /* Main.storyboard */; };
 		2C25FF761D90321D003819A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C25FF751D90321D003819A9 /* Assets.xcassets */; };
 		2C25FF791D90321D003819A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C25FF771D90321D003819A9 /* LaunchScreen.storyboard */; };
 		2C25FF841D90321D003819A9 /* ChemineesValleeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25FF831D90321D003819A9 /* ChemineesValleeTests.m */; };
 		2C25FF8F1D90321D003819A9 /* ChemineesValleeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25FF8E1D90321D003819A9 /* ChemineesValleeUITests.m */; };
+		529DBEF17A59D9928DE2E0BB /* libPods-ChemineesValleeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C15CDCB0681D6CF9B88B5D46 /* libPods-ChemineesValleeTests.a */; };
+		746FF5025751A24F07E892D6 /* libPods-ChemineesValleeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A7A1DDCC969EDF9FF2C3C3 /* libPods-ChemineesValleeUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,8 @@
 		2C25FF6A1D90321D003819A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2C25FF6C1D90321D003819A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2C25FF6D1D90321D003819A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2C25FF6F1D90321D003819A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2C25FF701D90321D003819A9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2C25FF6F1D90321D003819A9 /* ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		2C25FF701D90321D003819A9 /* ScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		2C25FF731D90321D003819A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C25FF751D90321D003819A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C25FF781D90321D003819A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,16 @@
 		2C25FF8A1D90321D003819A9 /* ChemineesValleeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChemineesValleeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C25FF8E1D90321D003819A9 /* ChemineesValleeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChemineesValleeUITests.m; sourceTree = "<group>"; };
 		2C25FF901D90321D003819A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C67B8461D9033F9002DDBFD /* ChemineesVallee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChemineesVallee.entitlements; sourceTree = "<group>"; };
+		3A571BC3EA9E1192147F3F5D /* Pods-ChemineesVallee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemineesVallee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChemineesVallee/Pods-ChemineesVallee.debug.xcconfig"; sourceTree = "<group>"; };
+		46C2490F538D0C40EB11D186 /* Pods-ChemineesValleeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemineesValleeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChemineesValleeTests/Pods-ChemineesValleeTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C171B31DECBF564FA068B38 /* Pods-ChemineesVallee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemineesVallee.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChemineesVallee/Pods-ChemineesVallee.release.xcconfig"; sourceTree = "<group>"; };
+		7FD66026848616791768F0F3 /* Pods-ChemineesValleeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemineesValleeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChemineesValleeUITests/Pods-ChemineesValleeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		82A50FE051FCD74451FADB4D /* Pods-ChemineesValleeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemineesValleeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChemineesValleeUITests/Pods-ChemineesValleeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C15CDCB0681D6CF9B88B5D46 /* libPods-ChemineesValleeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChemineesValleeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8378F5FCE77F9FAE1A65F81 /* libPods-ChemineesVallee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChemineesVallee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF485F0C237174E4042B17B3 /* Pods-ChemineesValleeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemineesValleeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChemineesValleeTests/Pods-ChemineesValleeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8A7A1DDCC969EDF9FF2C3C3 /* libPods-ChemineesValleeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChemineesValleeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBD877642E4A6093C8FB717 /* libPods-ChemineesVallee.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529DBEF17A59D9928DE2E0BB /* libPods-ChemineesValleeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746FF5025751A24F07E892D6 /* libPods-ChemineesValleeUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +101,8 @@
 				2C25FF821D90321D003819A9 /* ChemineesValleeTests */,
 				2C25FF8D1D90321D003819A9 /* ChemineesValleeUITests */,
 				2C25FF671D90321D003819A9 /* Products */,
+				3F8FC25953E8C05436A593C0 /* Pods */,
+				A13B126E1B96DD9252B98C45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +119,11 @@
 		2C25FF681D90321D003819A9 /* ChemineesVallee */ = {
 			isa = PBXGroup;
 			children = (
+				2C67B8461D9033F9002DDBFD /* ChemineesVallee.entitlements */,
 				2C25FF6C1D90321D003819A9 /* AppDelegate.h */,
 				2C25FF6D1D90321D003819A9 /* AppDelegate.m */,
-				2C25FF6F1D90321D003819A9 /* ViewController.h */,
-				2C25FF701D90321D003819A9 /* ViewController.m */,
+				2C25FF6F1D90321D003819A9 /* ScanViewController.h */,
+				2C25FF701D90321D003819A9 /* ScanViewController.m */,
 				2C25FF721D90321D003819A9 /* Main.storyboard */,
 				2C25FF751D90321D003819A9 /* Assets.xcassets */,
 				2C25FF771D90321D003819A9 /* LaunchScreen.storyboard */,
@@ -140,6 +159,29 @@
 			path = ChemineesValleeUITests;
 			sourceTree = "<group>";
 		};
+		3F8FC25953E8C05436A593C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A571BC3EA9E1192147F3F5D /* Pods-ChemineesVallee.debug.xcconfig */,
+				6C171B31DECBF564FA068B38 /* Pods-ChemineesVallee.release.xcconfig */,
+				DF485F0C237174E4042B17B3 /* Pods-ChemineesValleeTests.debug.xcconfig */,
+				46C2490F538D0C40EB11D186 /* Pods-ChemineesValleeTests.release.xcconfig */,
+				82A50FE051FCD74451FADB4D /* Pods-ChemineesValleeUITests.debug.xcconfig */,
+				7FD66026848616791768F0F3 /* Pods-ChemineesValleeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A13B126E1B96DD9252B98C45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8378F5FCE77F9FAE1A65F81 /* libPods-ChemineesVallee.a */,
+				C15CDCB0681D6CF9B88B5D46 /* libPods-ChemineesValleeTests.a */,
+				E8A7A1DDCC969EDF9FF2C3C3 /* libPods-ChemineesValleeUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C25FF931D90321D003819A9 /* Build configuration list for PBXNativeTarget "ChemineesVallee" */;
 			buildPhases = (
+				3F580BD80D4013BDF4515789 /* [CP] Check Pods Manifest.lock */,
 				2C25FF621D90321D003819A9 /* Sources */,
 				2C25FF631D90321D003819A9 /* Frameworks */,
 				2C25FF641D90321D003819A9 /* Resources */,
+				3A596774ECA2A3C5D250148A /* [CP] Embed Pods Frameworks */,
+				4AA58C7C653846BEA0FF560C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C25FF961D90321D003819A9 /* Build configuration list for PBXNativeTarget "ChemineesValleeTests" */;
 			buildPhases = (
+				6CF291F5B4E984CCFF920EB4 /* [CP] Check Pods Manifest.lock */,
 				2C25FF7B1D90321D003819A9 /* Sources */,
 				2C25FF7C1D90321D003819A9 /* Frameworks */,
 				2C25FF7D1D90321D003819A9 /* Resources */,
+				45B4B0337C1EFEFA6D746FB7 /* [CP] Embed Pods Frameworks */,
+				7CFD356FD1A972A6892D4F7E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C25FF991D90321D003819A9 /* Build configuration list for PBXNativeTarget "ChemineesValleeUITests" */;
 			buildPhases = (
+				1B945B004B952CF559E43280 /* [CP] Check Pods Manifest.lock */,
 				2C25FF861D90321D003819A9 /* Sources */,
 				2C25FF871D90321D003819A9 /* Frameworks */,
 				2C25FF881D90321D003819A9 /* Resources */,
+				5A8795D0B5C509BBCD25E64C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +259,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2NB67X8DYS;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					2C25FF7E1D90321D003819A9 = {
 						CreatedOnToolsVersion = 8.0;
@@ -271,12 +326,135 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B945B004B952CF559E43280 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3A596774ECA2A3C5D250148A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChemineesVallee/Pods-ChemineesVallee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F580BD80D4013BDF4515789 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		45B4B0337C1EFEFA6D746FB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChemineesValleeTests/Pods-ChemineesValleeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AA58C7C653846BEA0FF560C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChemineesVallee/Pods-ChemineesVallee-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A8795D0B5C509BBCD25E64C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChemineesValleeUITests/Pods-ChemineesValleeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CF291F5B4E984CCFF920EB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7CFD356FD1A972A6892D4F7E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChemineesValleeTests/Pods-ChemineesValleeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C25FF621D90321D003819A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C25FF711D90321D003819A9 /* ViewController.m in Sources */,
+				2C25FF711D90321D003819A9 /* ScanViewController.m in Sources */,
 				2C25FF6E1D90321D003819A9 /* AppDelegate.m in Sources */,
 				2C25FF6B1D90321D003819A9 /* main.m in Sources */,
 			);
@@ -351,6 +529,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -399,6 +578,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -425,10 +605,13 @@
 		};
 		2C25FF941D90321D003819A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A571BC3EA9E1192147F3F5D /* Pods-ChemineesVallee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ChemineesVallee/ChemineesVallee.entitlements;
 				DEVELOPMENT_TEAM = 2NB67X8DYS;
 				INFOPLIST_FILE = ChemineesVallee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JardelCompany.ChemineesVallee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -437,10 +620,13 @@
 		};
 		2C25FF951D90321D003819A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C171B31DECBF564FA068B38 /* Pods-ChemineesVallee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ChemineesVallee/ChemineesVallee.entitlements;
 				DEVELOPMENT_TEAM = 2NB67X8DYS;
 				INFOPLIST_FILE = ChemineesVallee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JardelCompany.ChemineesVallee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -449,6 +635,7 @@
 		};
 		2C25FF971D90321D003819A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF485F0C237174E4042B17B3 /* Pods-ChemineesValleeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2NB67X8DYS;
@@ -462,6 +649,7 @@
 		};
 		2C25FF981D90321D003819A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C2490F538D0C40EB11D186 /* Pods-ChemineesValleeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2NB67X8DYS;
@@ -475,6 +663,7 @@
 		};
 		2C25FF9A1D90321D003819A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82A50FE051FCD74451FADB4D /* Pods-ChemineesValleeUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 2NB67X8DYS;
 				INFOPLIST_FILE = ChemineesValleeUITests/Info.plist;
@@ -487,6 +676,7 @@
 		};
 		2C25FF9B1D90321D003819A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD66026848616791768F0F3 /* Pods-ChemineesValleeUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 2NB67X8DYS;
 				INFOPLIST_FILE = ChemineesValleeUITests/Info.plist;
@@ -516,6 +706,7 @@
 				2C25FF951D90321D003819A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C25FF961D90321D003819A9 /* Build configuration list for PBXNativeTarget "ChemineesValleeTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +715,7 @@
 				2C25FF981D90321D003819A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C25FF991D90321D003819A9 /* Build configuration list for PBXNativeTarget "ChemineesValleeUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +724,7 @@
 				2C25FF9B1D90321D003819A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
