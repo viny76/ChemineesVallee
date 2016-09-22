@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
+#import "MBProgressHUD.h"
 
-@interface ActualitesViewController : UIViewController
+@interface ActualitesViewController : UIViewController <UITabBarDelegate, UITabBarControllerDelegate, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate>
+
+@property (strong, nonatomic) MBProgressHUD *hud;
+@property (retain, nonatomic) WKWebView *wkWebView;
+@property (retain, nonatomic) UIWebView *webView;
 
 @end

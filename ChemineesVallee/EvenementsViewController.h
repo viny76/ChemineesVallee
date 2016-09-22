@@ -13,5 +13,7 @@
 @interface EvenementsViewController : UIViewController <UITabBarDelegate, UITabBarControllerDelegate, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate>
 
 @property (strong, nonatomic) MBProgressHUD *hud;
+@property (retain, nonatomic) WKWebView *wkWebView;
+@property (retain, nonatomic) UIWebView *webView;
 
 @end
