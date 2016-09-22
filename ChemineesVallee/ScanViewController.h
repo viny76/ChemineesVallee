@@ -15,7 +15,7 @@
 @interface ScanViewController : UIViewController <QRCodeReaderDelegate, UITabBarDelegate, UITabBarControllerDelegate, UIWebViewDelegate>
 
 @property (strong, nonatomic) QRCodeReaderViewController *vc;
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) MBProgressHUD *hud;
 
 @end

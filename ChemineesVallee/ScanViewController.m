@@ -28,7 +28,6 @@
         self.vc.delegate = self;
         __weak typeof(self) weakSelf = self;
         [self.vc setCompletionWithBlock:^(NSString *resultAsString) {
-            NSLog(@"Completion with result: %@", resultAsString);
             [weakSelf.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:resultAsString]]];
         }];
         
@@ -54,8 +53,7 @@
 
 - (void)tabBarController:(UITabBarController *)theTabBarController didSelectViewController:(UIViewController *)viewController {
     NSUInteger indexOfTab = [theTabBarController.viewControllers indexOfObject:viewController];
-    NSLog(@"Tab index = %u", (int)indexOfTab);
-    if (indexOfTab == 1) {
+    if (indexOfTab == 1 && ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]])) {
         [self.tabBarController presentViewController:self.vc animated:YES completion:NULL];
     }
 }
@@ -68,5 +66,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self.hud removeFromSuperview];
 }
+
+
 
 @end

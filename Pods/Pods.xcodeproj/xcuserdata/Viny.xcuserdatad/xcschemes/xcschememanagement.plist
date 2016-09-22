@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,15 +39,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>146D4D3BEC39209E7FD55AD619B9712E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1E0FE7506F2D7ACE652275BAF1A9B926</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>49ED9438422BB1186ED6C5BF05DA2D57</key>
+		<key>5F9CDF21330F4787AC04D56E0E745343</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,7 +67,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A85DA0DD2D2BDA1683C821A311243C1A</key>
+		<key>BEB0131A35EE9EDE0306D72BDC06CFC5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D09C43A24AD5B1E610FAE5EC61EED3A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA02C6094C39F4FFBEAA3E386F969A73</key>
 		<dict>
 			<key>primary</key>
 			<true/>

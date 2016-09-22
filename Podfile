@@ -6,6 +6,9 @@ target 'ChemineesVallee' do
   # use_frameworks!
 pod 'QRCodeReaderViewController', '~> 4.0.1'
 pod 'MBProgressHUD', '~> 0.9.2'
+pod 'Parse'
+pod 'TPKeyboardAvoiding'
+pod 'GoogleMaps'
 
   # Pods for ChemineesVallee
 
