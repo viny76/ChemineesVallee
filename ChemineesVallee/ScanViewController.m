@@ -11,27 +11,25 @@
 @interface ScanViewController ()
 @end
 
+BOOL scanView;
+
 @implementation ScanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBarController.delegate = self;
+    
     if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
-        self.vc = nil;
-        static dispatch_once_t onceToken;
-        
-        dispatch_once(&onceToken, ^{
             QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
             self.vc = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Annuler" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
             self.vc.modalPresentationStyle = UIModalPresentationFormSheet;
-        });
         self.vc.delegate = self;
         __weak typeof(self) weakSelf = self;
         [self.vc setCompletionWithBlock:^(NSString *resultAsString) {
             [weakSelf.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:resultAsString]]];
         }];
         
-        [self.tabBarController presentViewController:self.vc animated:YES completion:NULL];
+        [self displayQRCodeView];
     }
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Le lecteur n'est pas supporté par l'appareil" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -39,22 +37,29 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (!scanView) {
+        [self displayQRCodeView];
+    }
+}
+
 #pragma mark - QRCodeReader Delegate Methods
 
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result {
     [reader stopScanning];
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self removeQRCodeView];
 }
 
 - (void)readerDidCancel:(QRCodeReaderViewController *)reader {
-//    [self.tabBarController setSelectedIndex:0];
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self removeQRCodeView];
+    [self.tabBarController setSelectedIndex:0];
 }
 
 - (void)tabBarController:(UITabBarController *)theTabBarController didSelectViewController:(UIViewController *)viewController {
-    NSUInteger indexOfTab = [theTabBarController.viewControllers indexOfObject:viewController];
-    if (indexOfTab == 1 && ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]])) {
-        [self.tabBarController presentViewController:self.vc animated:YES completion:NULL];
+    NSLog(@"item: %ld", theTabBarController.selectedIndex);
+    if (theTabBarController.selectedIndex == 1 && !scanView && ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]])) {
+        [self displayQRCodeView];
     }
 }
 
@@ -64,9 +69,23 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [self.hud removeFromSuperview];
+    if (!webView.isLoading) {
+       [self.hud removeFromSuperview];
+    }
 }
 
+- (void)displayQRCodeView {
+    [self addChildViewController:self.vc];
+    [self.view addSubview:self.vc.view];
+    [self.vc didMoveToParentViewController:self];
+    scanView = YES;
+}
 
+- (void)removeQRCodeView {
+    [self.vc willMoveToParentViewController:nil];
+    [self.vc.view removeFromSuperview];
+    [self.vc removeFromParentViewController];
+    scanView = NO;
+}
 
 @end

@@ -47,6 +47,9 @@
                                              forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor redColor] }
                                              forState:UIControlStateSelected];
+    UITabBarController *tabBarController =
+    (UITabBarController *)[[self window] rootViewController];
+    [tabBarController setDelegate:self];
     return YES;
 }
 

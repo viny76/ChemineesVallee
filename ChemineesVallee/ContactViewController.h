@@ -10,7 +10,7 @@
 #import <MessageUI/MessageUI.h>
 @import GoogleMaps;
 
-@interface ContactViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface ContactViewController : UIViewController <MFMailComposeViewControllerDelegate, UITabBarDelegate, UITabBarControllerDelegate>
 @property (strong, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 

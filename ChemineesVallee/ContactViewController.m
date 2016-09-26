@@ -16,14 +16,65 @@
 @implementation ContactViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    self.tabBarController.delegate = self;
+    
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     
+    int zoom;
+    
+    NSString *text = @"Cheminées VALLÉE.\n17 Rue de la République,\n76000 Rouen";
+    // If attributed text is supported (iOS6+)
+    if ([self.addressLabel respondsToSelector:@selector(setAttributedText:)]) {
+        
+        // iOS6 and above : Use NSAttributedStrings
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            // iPad
+            zoom = 16;
+            const CGFloat fontSize = 36;
+            NSDictionary *attrs = @{
+                                    NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Bold" size:fontSize],
+                                    NSForegroundColorAttributeName:[UIColor colorWhite]
+                                    };
+            NSDictionary *subAttrs = @{
+                                       NSFontAttributeName:[UIFont fontWithName:@"Helvetica" size:fontSize]
+                                       };
+            const NSRange range = NSMakeRange(0,17);
+            NSMutableAttributedString *attributedText =
+            [[NSMutableAttributedString alloc] initWithString:text
+                                                   attributes:subAttrs];
+            [attributedText setAttributes:attrs range:range];
+            [self.addressLabel setAttributedText:attributedText];
+            
+        } else {
+            const CGFloat fontSize = 15;
+            zoom = 15;
+            NSDictionary *attrs = @{
+                                    NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Bold" size:fontSize],
+                                    NSForegroundColorAttributeName:[UIColor colorWhite]
+                                    };
+            NSDictionary *subAttrs = @{
+                                       NSFontAttributeName:[UIFont fontWithName:@"Helvetica" size:fontSize]
+                                       };
+            const NSRange range = NSMakeRange(0,17);
+            NSMutableAttributedString *attributedText =
+            [[NSMutableAttributedString alloc] initWithString:text
+                                                   attributes:subAttrs];
+            [attributedText setAttributes:attrs range:range];
+            [self.addressLabel setAttributedText:attributedText];
+        }
+    }
+    // If attributed text is NOT supported (iOS5-)
+    else {
+        self.addressLabel.text = text;
+    }
+
+    
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:49.438561
                                                             longitude:1.096386
-                                                                 zoom:16];
+                                                                 zoom:zoom];
     [self.mapView animateToCameraPosition:camera];
-    //    self.mapView.myLocationEnabled = YES;
     
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
@@ -31,29 +82,6 @@
     marker.title = @"Cheminées Vallée";
     marker.snippet = @"Rouen";
     marker.map = self.mapView;
-    
-    // Make Bold first line.
-    NSString *text = @"Cheminées VALLÉE.\n17 Rue de la République,\n76000 Rouen";
-    if ([self.addressLabel respondsToSelector:@selector(setAttributedText:)]) {
-        // iOS6 and above : Use NSAttributedStrings
-        const CGFloat fontSize = 15;
-        NSDictionary *attrs = @{
-                                NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Bold" size:fontSize],
-                                NSForegroundColorAttributeName:[UIColor colorWhite]
-                                };
-        NSDictionary *subAttrs = @{
-                                   NSFontAttributeName:[UIFont fontWithName:@"Helvetica" size:fontSize]
-                                   };
-        const NSRange range = NSMakeRange(0,17);
-        NSMutableAttributedString *attributedText =
-        [[NSMutableAttributedString alloc] initWithString:text
-                                               attributes:subAttrs];
-        [attributedText setAttributes:attrs range:range];
-        [self.addressLabel setAttributedText:attributedText];
-    } else {
-        // iOS5 and below
-        [self.addressLabel setText:text];
-    }
 }
 
 - (IBAction)phoneButton:(id)sender {
@@ -99,6 +127,10 @@
     
     // Remove the mail view
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)tabBarController:(UITabBarController *)theTabBarController didSelectViewController:(UIViewController *)viewController {
+    NSLog(@"item: %ld", theTabBarController.selectedIndex);
 }
 
 

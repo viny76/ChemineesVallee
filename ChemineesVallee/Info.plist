@@ -45,9 +45,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIAppFonts</key>
-	<array>
-		<string>DIN-Next-W01-Light.ttf</string>
-	</array>
+	<array/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

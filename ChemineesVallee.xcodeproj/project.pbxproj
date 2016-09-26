@@ -19,7 +19,6 @@
 		2C59D4151D91EAAB00D48531 /* ActualitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59D4141D91EAAB00D48531 /* ActualitesViewController.m */; };
 		2C59D4181D91EBF500D48531 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59D4171D91EBF500D48531 /* LoginViewController.m */; };
 		2CB94B7E1D927BFB00CE8ACC /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB94B7D1D927BFB00CE8ACC /* ContactViewController.m */; };
-		2CB94B801D92917200CE8ACC /* DIN-Next-W01-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB94B7F1D92917200CE8ACC /* DIN-Next-W01-Light.ttf */; };
 		2CCAF17E1D931E4100AFDCA5 /* EvenementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCAF17D1D931E4100AFDCA5 /* EvenementsViewController.m */; };
 		2CCAF1821D9320D100AFDCA5 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCAF1811D9320D100AFDCA5 /* UIColor+CustomColors.m */; };
 		529DBEF17A59D9928DE2E0BB /* libPods-ChemineesValleeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C15CDCB0681D6CF9B88B5D46 /* libPods-ChemineesValleeTests.a */; };
@@ -67,7 +66,6 @@
 		2C67B8461D9033F9002DDBFD /* ChemineesVallee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChemineesVallee.entitlements; sourceTree = "<group>"; };
 		2CB94B7C1D927BFB00CE8ACC /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		2CB94B7D1D927BFB00CE8ACC /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
-		2CB94B7F1D92917200CE8ACC /* DIN-Next-W01-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN-Next-W01-Light.ttf"; sourceTree = "<group>"; };
 		2CB94B811D9291EF00CE8ACC /* CustomFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFonts.h; sourceTree = "<group>"; };
 		2CCAF17C1D931E4100AFDCA5 /* EvenementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvenementsViewController.h; sourceTree = "<group>"; };
 		2CCAF17D1D931E4100AFDCA5 /* EvenementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvenementsViewController.m; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 		2C25FF691D90321D003819A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2CB94B7F1D92917200CE8ACC /* DIN-Next-W01-Light.ttf */,
 				2C25FF6A1D90321D003819A9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -342,7 +339,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CB94B801D92917200CE8ACC /* DIN-Next-W01-Light.ttf in Resources */,
 				2C25FF791D90321D003819A9 /* LaunchScreen.storyboard in Resources */,
 				2C25FF761D90321D003819A9 /* Assets.xcassets in Resources */,
 				2C25FF741D90321D003819A9 /* Main.storyboard in Resources */,

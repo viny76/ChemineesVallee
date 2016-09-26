@@ -12,7 +12,7 @@
 #import "QRCodeReader.h"
 #import "MBProgressHUD.h"
 
-@interface ScanViewController : UIViewController <QRCodeReaderDelegate, UITabBarDelegate, UITabBarControllerDelegate, UIWebViewDelegate>
+@interface ScanViewController : UIViewController <QRCodeReaderDelegate, UIWebViewDelegate, UITabBarDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) QRCodeReaderViewController *vc;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

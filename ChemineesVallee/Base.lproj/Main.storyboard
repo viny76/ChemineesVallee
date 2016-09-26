@@ -70,11 +70,10 @@
         <!--Actualités-->
         <scene sceneID="d5y-Y8-MGZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BKG-RJ-1UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tv8-zs-tyh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Actualités" image="news" id="J7R-uu-kSf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5qr-lr-ylx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5qr-lr-ylx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -83,6 +82,7 @@
                         <segue destination="ZiI-Uv-Xj7" kind="relationship" relationship="rootViewController" id="7KQ-GD-nQ8"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKG-RJ-1UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1966.875" y="-231.33802816901408"/>
         </scene>
@@ -248,8 +248,11 @@
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                 <color key="textColor" red="0.99206143617630005" green="0.99229151010513306" blue="0.98795562982559204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="50"/>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imt-dX-uAZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Imt-dX-uAZ">
                                 <string key="text">Cheminées VALLÉE.
 17 Rue de la République,
 76000 Rouen</string>
@@ -264,15 +267,34 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <color key="textColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQz-Gl-PMP">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0VR-S3-MnQ"/>
                                     <constraint firstAttribute="width" constant="50" id="4Xm-B8-oIa"/>
+                                    <constraint firstAttribute="height" constant="200" id="7aD-B9-iTv"/>
+                                    <constraint firstAttribute="width" constant="200" id="EyA-Jp-M3G"/>
                                 </constraints>
                                 <state key="normal" image="email">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7aD-B9-iTv"/>
+                                        <exclude reference="EyA-Jp-M3G"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="0VR-S3-MnQ"/>
+                                        <exclude reference="4Xm-B8-oIa"/>
+                                        <include reference="7aD-B9-iTv"/>
+                                        <include reference="EyA-Jp-M3G"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="sendEmail:" destination="Dsc-O6-LNx" eventType="touchUpInside" id="Fi4-Mx-cel"/>
                                 </connections>
@@ -281,6 +303,9 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <color key="textColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5m-U8-GXT">
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
@@ -288,6 +313,9 @@
                                     <color key="titleColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
+                                </variation>
                                 <connections>
                                     <action selector="phoneButton:" destination="Dsc-O6-LNx" eventType="touchUpInside" id="kQf-8b-lva"/>
                                 </connections>
@@ -295,6 +323,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.12939286231994629" green="0.12942266464233398" blue="0.12939092516899109" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fkp-6o-RfN" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="0.4" id="0Dj-fF-fgb"/>
                             <constraint firstItem="fkp-6o-RfN" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="1:3" id="4Ez-1O-pJD"/>
                             <constraint firstItem="Imt-dX-uAZ" firstAttribute="top" secondItem="IN6-K5-hTb" secondAttribute="bottom" constant="20" id="4hO-b6-cdy"/>
                             <constraint firstItem="HtM-cr-JS2" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="1:10" id="5GU-ok-WKI"/>
@@ -313,22 +342,35 @@
                             <constraint firstItem="dQz-Gl-PMP" firstAttribute="leading" secondItem="HtM-cr-JS2" secondAttribute="trailing" constant="5" id="UfD-49-u1j"/>
                             <constraint firstItem="Knm-yn-XjB" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="1:10" id="gaz-ZD-ibT"/>
                             <constraint firstItem="U5m-U8-GXT" firstAttribute="height" secondItem="Knm-yn-XjB" secondAttribute="height" id="m0R-Mk-pIi"/>
+                            <constraint firstItem="fkp-6o-RfN" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="0.4" id="m1U-33-N3N"/>
                             <constraint firstItem="fkp-6o-RfN" firstAttribute="top" secondItem="Imt-dX-uAZ" secondAttribute="bottom" constant="10" id="mtR-fw-qGG"/>
                             <constraint firstAttribute="centerX" secondItem="IN6-K5-hTb" secondAttribute="centerX" id="sKy-iO-zUw"/>
                             <constraint firstItem="fkp-6o-RfN" firstAttribute="leading" secondItem="5bB-Et-XiN" secondAttribute="leading" constant="10" id="vTt-YX-wCn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0Dj-fF-fgb"/>
+                                <exclude reference="4Ez-1O-pJD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="0Dj-fF-fgb"/>
+                                <exclude reference="m1U-33-N3N"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Dp3-Bk-dDF">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="11d-nR-5DT">
-                            <rect key="frame" x="70" y="2" width="180" height="41"/>
+                            <rect key="frame" x="70" y="1.5" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                         </button>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addressLabel" destination="Imt-dX-uAZ" id="CEN-iJ-LiN"/>
+                        <outlet property="addressLabel" destination="Imt-dX-uAZ" id="D4B-lE-Psi"/>
                         <outlet property="mapView" destination="fkp-6o-RfN" id="uEM-EB-hcQ"/>
                     </connections>
                 </viewController>
@@ -342,7 +384,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IGd-pe-JBo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contact" image="contact" id="tiC-uK-9zW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6xD-0w-wXI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6xD-0w-wXI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -372,13 +414,13 @@
                     <navigationItem key="navigationItem" id="fU4-cV-PCz">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t4L-re-Lth">
-                            <rect key="frame" x="68" y="2" width="180" height="41"/>
+                            <rect key="frame" x="70" y="1.5" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                         </button>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Nb7-uI-jmD">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tIW-gj-u0H">
-                                <rect key="frame" x="254" y="-3" width="30" height="30"/>
+                                <rect key="frame" x="274" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="refresh"/>
                                 <connections>
@@ -398,7 +440,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k77-xK-lWH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Événements" image="calendar" id="C8X-xR-l7f"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7UC-nG-9Tt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7UC-nG-9Tt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
