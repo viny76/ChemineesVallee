@@ -58,26 +58,29 @@ BOOL scanView;
 
 - (void)tabBarController:(UITabBarController *)theTabBarController didSelectViewController:(UIViewController *)viewController {
     NSLog(@"item: %ld", theTabBarController.selectedIndex);
-    if (theTabBarController.selectedIndex == 1 && !scanView && ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]])) {
-        [self displayQRCodeView];
+    if (theTabBarController.selectedIndex == 1 && ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]])) {
+        if (scanView) {
+        } else {
+            [self displayQRCodeView];
+        }
     }
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    self.hud.mode = MBProgressHUDModeIndeterminate;
+//    self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+//    self.hud.mode = MBProgressHUDModeIndeterminate;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    if (!webView.isLoading) {
-       [self.hud removeFromSuperview];
-    }
+//    if (!webView.isLoading) {
+//    }
 }
 
 - (void)displayQRCodeView {
     [self addChildViewController:self.vc];
     [self.view addSubview:self.vc.view];
     [self.vc didMoveToParentViewController:self];
+    self.tabBarController.delegate = self;
     scanView = YES;
 }
 
