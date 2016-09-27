@@ -56,6 +56,7 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     self.tabBarController.tabBar.userInteractionEnabled = NO;
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.hud hide:YES afterDelay:10.0];
     self.hud.mode = MBProgressHUDModeIndeterminate;
 }
 
@@ -72,9 +73,10 @@
 
 // WKWebView delegate
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
-    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    self.hud.mode = MBProgressHUDModeIndeterminate;
     self.tabBarController.tabBar.userInteractionEnabled = NO;
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.hud hide:YES afterDelay:10.0];
+    self.hud.mode = MBProgressHUDModeIndeterminate;
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {

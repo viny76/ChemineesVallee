@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Scan-->
+        <!--Scan View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ScanViewController" sceneMemberID="viewController">
@@ -19,30 +19,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-mU-0pg">
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2tQ-d4-5Bu"/>
-                                </connections>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="NwI-mU-0pg" secondAttribute="trailing" id="4IP-b0-rhk"/>
-                            <constraint firstItem="NwI-mU-0pg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="K3I-YH-e4C"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NwI-mU-0pg" secondAttribute="bottom" id="KVb-rf-yPF"/>
-                            <constraint firstItem="NwI-mU-0pg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oH8-sU-Bw9"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" image="QRCode" id="V4u-m7-UkZ"/>
-                    <connections>
-                        <outlet property="webView" destination="NwI-mU-0pg" id="WQp-7d-9ez"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="HAt-Pb-zEa">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GCA-e4-zPN">
+                            <rect key="frame" x="70" y="2" width="180" height="41"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="logo"/>
+                        </button>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="441"/>
+            <point key="canvasLocation" x="2962.5" y="440.49295774647885"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="c8u-l1-maN">
@@ -58,7 +48,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="tv8-zs-tyh" kind="relationship" relationship="viewControllers" id="SAe-h7-uph"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3bt-A1-Hq4"/>
+                        <segue destination="Uxy-Mh-B03" kind="relationship" relationship="viewControllers" id="3bt-A1-Hq4"/>
                         <segue destination="k77-xK-lWH" kind="relationship" relationship="viewControllers" id="HrN-9h-6zO"/>
                         <segue destination="IGd-pe-JBo" kind="relationship" relationship="viewControllers" id="2CJ-P6-2t1"/>
                     </connections>
@@ -73,7 +63,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tv8-zs-tyh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Actualités" image="news" id="J7R-uu-kSf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5qr-lr-ylx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5qr-lr-ylx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -363,7 +353,7 @@
                     <navigationItem key="navigationItem" id="Dp3-Bk-dDF">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="11d-nR-5DT">
-                            <rect key="frame" x="70" y="1.5" width="180" height="41"/>
+                            <rect key="frame" x="70" y="2" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                         </button>
@@ -384,7 +374,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IGd-pe-JBo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contact" image="contact" id="tiC-uK-9zW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6xD-0w-wXI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6xD-0w-wXI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -414,7 +404,7 @@
                     <navigationItem key="navigationItem" id="fU4-cV-PCz">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t4L-re-Lth">
-                            <rect key="frame" x="70" y="1.5" width="180" height="41"/>
+                            <rect key="frame" x="70" y="2" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                         </button>
@@ -440,7 +430,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k77-xK-lWH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Événements" image="calendar" id="C8X-xR-l7f"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7UC-nG-9Tt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7UC-nG-9Tt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -452,6 +442,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8g-UU-W9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1966.875" y="1851.7605633802816"/>
+        </scene>
+        <!--Scan-->
+        <scene sceneID="KfV-xf-pyt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uxy-Mh-B03" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scan" image="QRCode" id="V4u-m7-UkZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="apR-Gq-EUZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qHM-e4-65q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUf-0U-Ecu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965" y="440.49295774647885"/>
         </scene>
     </scenes>
     <resources>

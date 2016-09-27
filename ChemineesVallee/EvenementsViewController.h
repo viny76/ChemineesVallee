@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "MBProgressHUD.h"
 
-@interface EvenementsViewController : UIViewController <UITabBarDelegate, UITabBarControllerDelegate, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate>
+@interface EvenementsViewController : UIViewController <UITabBarDelegate, UITabBarControllerDelegate, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, MBProgressHUDDelegate>
 
 @property (strong, nonatomic) MBProgressHUD *hud;
 @property (retain, nonatomic) WKWebView *wkWebView;
