@@ -1,6 +1,6 @@
 //
 //  UIColor+CustomColors.h
-//  Chillin
+//  ChemineesVallee
 //
 //  Created by Viny on 10/05/2016.
 //

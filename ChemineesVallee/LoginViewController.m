@@ -1,6 +1,6 @@
 //
 //  LoginViewController.m
-//  Chillin
+//  ChemineesVallee
 //
 //  Created by Vincent Jardel on 20/05/2014.
 //  Copyright (c) 2014 Jardel Vincent. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UIColor+CustomColors.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController ()
 @end
@@ -18,6 +19,8 @@
     [super viewDidLoad];
     self.emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email :" attributes:@{NSForegroundColorAttributeName: [UIColor colorWhite]}];
     self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Mot de passe :" attributes:@{NSForegroundColorAttributeName: [UIColor colorWhite]}];
+    self.loginButton.layer.cornerRadius = 10;
+    self.loginButton.clipsToBounds = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,16 +52,8 @@
                                              [alertViewSignUp show];
                                          } else {
                                              //GOOD LOGIN
-//                                             AppDelegate *appDelegateTemp = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-//                                             
-//                                             appDelegateTemp.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
                                              [self.navigationController popViewControllerAnimated:YES];
                                              [self.hud removeFromSuperview];
-//
-////                                             // Save user for Push notification
-//                                             PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-//                                             [currentInstallation setObject:[PFUser currentUser].objectId forKey: @"userId"];
-//                                             [currentInstallation saveInBackground];
                                          }
                                      }];
     }

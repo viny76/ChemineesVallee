@@ -10,7 +10,6 @@
 #import "AppDelegate.h"
 
 @interface EvenementsViewController ()
-
 @end
 
 @implementation EvenementsViewController
@@ -18,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBarController.delegate = self;
+    [self.backButton setEnabled:NO];
+    [self.backButton setTintColor: [UIColor clearColor]];
     
     NSString *scriptString = @"var styleTag = document.createElement(\"style\"); styleTag.textContent = 'div#SITE_HEADER {display:none !important;} div#PAGES_CONTAINER {position: absolute !important; top: 1% !important; left: 0px !important;}'; document.documentElement.appendChild(styleTag);";
     WKUserScript *script = [[WKUserScript alloc] initWithSource:scriptString injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
@@ -33,6 +34,7 @@
     if (NSClassFromString(@"WKWebView")) {
         self.wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
         self.view = self.wkWebView;
+        self.wkWebView.UIDelegate = self;
         self.wkWebView.navigationDelegate = self;
         [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/evenements"]]];
     } else {
@@ -54,7 +56,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     if (!webView.isLoading) {
         NSString *cssString = @"div#SITE_HEADER {display:none;} div#PAGES_CONTAINER {position: absolute !important; top: 1% !important; left: 0px !important;}";
-        NSString *javascriptString = @"var style = document.createElement('style'); style.innerHTML = '%@'; document.head.appendChild(style)";
+        NSString *javascriptString = @"var style = document.createElement('style'); style.innerHTML = '%@'; document.head.appendChild(style);";
         NSString *javascriptWithCSSString = [NSString stringWithFormat:javascriptString, cssString];
         [webView stringByEvaluatingJavaScriptFromString:javascriptWithCSSString];
         [self.hud removeFromSuperview];
@@ -77,8 +79,31 @@
     }
 }
 
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    if (!navigationAction.targetFrame.isMainFrame) {
+        [webView loadRequest:navigationAction.request];
+    }
+    
+    return nil;
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    if ([navigationAction.request.URL.absoluteString isEqualToString:@"http://www.chemineesvallee.com/evenements"] || [navigationAction.request.URL.absoluteString isEqualToString:@"mailto:info@chemineesvallee.com"] || [navigationAction.request.URL.absoluteString isEqualToString:@"tel:0235983750"] || [navigationAction.request.URL.absoluteString hasPrefix:@"https://wix-pop-up.appspot.com/app"]) {
+        [self.backButton setEnabled:NO];
+        [self.backButton setTintColor: [UIColor clearColor]];
+    } else {
+        [self.backButton setEnabled:YES];
+        [self.backButton setTintColor:nil];
+    }
+    
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+
 - (IBAction)refreshButton:(id)sender {
     // If it is present, create a WKWebView. If not, create a UIWebView.
+    if (![self.hud isHidden]) {
+        [self.hud removeFromSuperview];
+    }
     if (NSClassFromString(@"WKWebView")) {
         [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/evenements"]]];
     } else {
@@ -86,8 +111,12 @@
     }
 }
 
-- (void)tabBarController:(UITabBarController *)theTabBarController didSelectViewController:(UIViewController *)viewController {
-    NSLog(@"item: %ld", theTabBarController.selectedIndex);
+- (IBAction)backButton:(id)sender {
+    if (![self.hud isHidden]) {
+        [self.hud removeFromSuperview];
+    }
+    [self.wkWebView goBack];
+    [self.wkWebView reload];
 }
 
 @end

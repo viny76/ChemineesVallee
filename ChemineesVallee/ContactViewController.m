@@ -10,7 +10,6 @@
 #import "UIColor+CustomColors.h"
 
 @interface ContactViewController ()
-
 @end
 
 @implementation ContactViewController
@@ -130,7 +129,6 @@
 }
 
 - (void)tabBarController:(UITabBarController *)theTabBarController didSelectViewController:(UIViewController *)viewController {
-    NSLog(@"item: %ld", theTabBarController.selectedIndex);
 }
 
 

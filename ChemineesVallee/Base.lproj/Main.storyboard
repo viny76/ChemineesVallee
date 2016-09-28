@@ -23,7 +23,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HAt-Pb-zEa">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GCA-e4-zPN">
+                        <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GCA-e4-zPN">
                             <rect key="frame" x="70" y="2" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
@@ -92,12 +92,17 @@
                     <navigationItem key="navigationItem" id="hax-Yl-BXV">
                         <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Retour" id="bJ2-0K-r2b"/>
+                        <barButtonItem key="leftBarButtonItem" image="back" id="73q-Og-LjD">
+                            <connections>
+                                <action selector="backButton:" destination="ZiI-Uv-Xj7" id="ydy-fZ-S2a"/>
+                            </connections>
+                        </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="voU-bi-YHb">
                             <rect key="frame" x="70" y="2" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                             <connections>
-                                <segue destination="DCK-sS-ZvQ" kind="show" id="E4Q-uG-xVk"/>
+                                <action selector="logoTouched:" destination="ZiI-Uv-Xj7" eventType="touchUpInside" id="af1-C4-IDl"/>
                             </connections>
                         </button>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="yr2-2e-5c0">
@@ -111,6 +116,10 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="73q-Og-LjD" id="kcT-1h-7gG"/>
+                        <outlet property="logoButton" destination="voU-bi-YHb" id="9CY-e7-Ims"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLK-TM-EVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,13 +170,13 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm7-xx-WZ6">
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="180" id="fM1-HP-oDU"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                 <state key="normal" title="Se Connecter">
-                                                    <color key="titleColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="login" destination="DCK-sS-ZvQ" eventType="touchUpInside" id="5gc-Gx-2fg"/>
@@ -215,12 +224,82 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="YXS-yo-I5u" id="Tpo-jg-XU9"/>
                         <outlet property="emailField" destination="46d-aJ-3hI" id="G9P-xo-1pV"/>
+                        <outlet property="loginButton" destination="fm7-xx-WZ6" id="EUp-d2-fx3"/>
                         <outlet property="passwordField" destination="lBu-9M-KQb" id="rXf-Hp-QlJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvf-V8-WdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3729" y="-231"/>
+            <point key="canvasLocation" x="3705" y="-520"/>
+        </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="ohx-Vn-tyy">
+            <objects>
+                <viewController storyboardIdentifier="NotificationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xHO-mN-vh3" customClass="NotificationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vlI-fw-wxT"/>
+                        <viewControllerLayoutGuide type="bottom" id="PZf-fU-1fn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GMH-Ac-Jnc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-2D-hdi">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                <color key="textColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="50"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-sO-Cnj">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xHO-mN-vh3" id="cRO-M3-31m"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUG-CX-WX1">
+                                <color key="backgroundColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="2wL-Mi-hdC"/>
+                                </constraints>
+                                <state key="normal" title="Envoyer">
+                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendNotification:" destination="xHO-mN-vh3" eventType="touchUpInside" id="Tbf-7l-HDg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Tck-2D-hdi" firstAttribute="centerX" secondItem="GMH-Ac-Jnc" secondAttribute="centerX" id="Ebw-Hr-4Nn"/>
+                            <constraint firstItem="Tck-2D-hdi" firstAttribute="top" secondItem="vlI-fw-wxT" secondAttribute="bottom" constant="20" id="ErI-vr-4wJ"/>
+                            <constraint firstAttribute="trailing" secondItem="ACa-sO-Cnj" secondAttribute="trailing" constant="10" id="Ivx-CM-bsx"/>
+                            <constraint firstItem="hUG-CX-WX1" firstAttribute="centerX" secondItem="GMH-Ac-Jnc" secondAttribute="centerX" id="bcg-O0-O1G"/>
+                            <constraint firstItem="ACa-sO-Cnj" firstAttribute="top" secondItem="Tck-2D-hdi" secondAttribute="bottom" constant="50" id="hos-zW-9Nf"/>
+                            <constraint firstItem="hUG-CX-WX1" firstAttribute="top" secondItem="ACa-sO-Cnj" secondAttribute="bottom" constant="20" id="ja7-rv-Aac"/>
+                            <constraint firstItem="ACa-sO-Cnj" firstAttribute="leading" secondItem="GMH-Ac-Jnc" secondAttribute="leading" constant="10" id="mMr-jm-VGD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="R1y-EA-wNW">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WPX-Wf-GuG">
+                            <rect key="frame" x="70" y="2" width="180" height="41"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="logo"/>
+                        </button>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="notificationText" destination="ACa-sO-Cnj" id="MPd-Yj-dWH"/>
+                        <outlet property="sendButton" destination="hUG-CX-WX1" id="hQt-pj-gLn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1e-dk-fdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4702.5" y="144.71830985915494"/>
         </scene>
         <!--Contact-->
         <scene sceneID="Kqv-21-oJv">
@@ -403,6 +482,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="fU4-cV-PCz">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="back" id="MUv-Yc-PM7">
+                            <connections>
+                                <action selector="backButton:" destination="9ev-fS-ajG" id="xnG-kH-U2l"/>
+                            </connections>
+                        </barButtonItem>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t4L-re-Lth">
                             <rect key="frame" x="70" y="2" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -419,6 +503,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="MUv-Yc-PM7" id="PSx-6o-6IX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGD-v2-xZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -462,9 +549,28 @@
             </objects>
             <point key="canvasLocation" x="1965" y="440.49295774647885"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z3S-iT-LwV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2La-Uv-NPv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XKY-vT-LrU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xHO-mN-vh3" kind="relationship" relationship="rootViewController" id="5Wr-he-hX4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hC-Y2-olZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3705" y="144.71830985915494"/>
+        </scene>
     </scenes>
     <resources>
         <image name="QRCode" width="30" height="30"/>
+        <image name="back" width="16" height="16"/>
         <image name="calendar" width="30" height="30"/>
         <image name="contact" width="30" height="30"/>
         <image name="email" width="25" height="25"/>

@@ -24,15 +24,14 @@ BOOL scanView;
     [userContentController addUserScript:script];
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     configuration.userContentController = userContentController;
-    
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.translucent = NO;
+
     self.tabBarController.delegate = self;
     
     // If it is present, create a WKWebView. If not, create a UIWebView.
     if (NSClassFromString(@"WKWebView")) {
         self.wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
         self.view = self.wkWebView;
+        self.wkWebView.UIDelegate = self;
         self.wkWebView.navigationDelegate = self;
         if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
             QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
@@ -75,7 +74,7 @@ BOOL scanView;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (!scanView) {
+    if (!scanView && [QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
         [self displayQRCodeView];
     }
 }
@@ -88,12 +87,10 @@ BOOL scanView;
 }
 
 - (void)readerDidCancel:(QRCodeReaderViewController *)reader {
-//    [self removeQRCodeView];
     [self.tabBarController setSelectedIndex:0];
 }
 
 - (void)tabBarController:(UITabBarController *)theTabBarController didSelectViewController:(UIViewController *)viewController {
-    NSLog(@"item: %ld", theTabBarController.selectedIndex);
     if (theTabBarController.selectedIndex == 1 && ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]])) {
         if (scanView) {
         } else {
@@ -138,6 +135,14 @@ BOOL scanView;
         [self.hud removeFromSuperview];
         self.tabBarController.tabBar.userInteractionEnabled = YES;
     }
+}
+
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    if (!navigationAction.targetFrame.isMainFrame) {
+        [webView loadRequest:navigationAction.request];
+    }
+    
+    return nil;
 }
 
 - (void)displayQRCodeView {

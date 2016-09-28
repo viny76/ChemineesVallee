@@ -1,6 +1,6 @@
 //
 //  LoginViewController.h
-//  Chillin
+//  ChemineesVallee
 //
 //  Created by Vincent Jardel on 20/05/2014.
 //  Copyright (c) 2014 Jardel Vincent. All rights reserved.
@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIView *backgroundImageView;
 @property (nonatomic, strong) MBProgressHUD *hud;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 - (IBAction)login;
 

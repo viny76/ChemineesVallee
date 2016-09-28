@@ -8,14 +8,13 @@
 
 #import "AppDelegate.h"
 #import "UIColor+CustomColors.h"
+
 @import GoogleMaps;
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -24,12 +23,14 @@
         configuration.clientKey = @"Ve7VnDWV1Thht2Fkc3IelUBoPv0wBBFw16zIMAms";
         configuration.server = @"http://chemineesvallee.herokuapp.com/parse";
     }]];
-    [PFUser enableRevocableSessionInBackground];
+    
     [PFUser enableAutomaticUser];
+    [[PFUser currentUser] incrementKey:@"RunCount"];
+    [[PFUser currentUser] saveInBackground];
     
     // Google Maps
     [GMSServices provideAPIKey:@"AIzaSyBheDTRVW42mRRomy7aaEiwpvCdqXgAsFg"];
-    
+
     //Push Notifications
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
@@ -40,9 +41,8 @@
     [application registerForRemoteNotifications];
     application.applicationIconBadgeNumber = 0;
     
-    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-    }];
-    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWhite] }
                                              forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor redColor] }
@@ -50,10 +50,12 @@
     UITabBarController *tabBarController =
     (UITabBarController *)[[self window] rootViewController];
     [tabBarController setDelegate:self];
+    
     return YES;
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSLog(@"%@", deviceToken);
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
@@ -62,6 +64,11 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    // Register to receive notifications
+    [application registerForRemoteNotifications];
 }
 
 
