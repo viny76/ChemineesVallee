@@ -19,6 +19,8 @@
 @property (retain, nonatomic) WKWebView *wkWebView;
 @property (retain, nonatomic) UIWebView *webView;
 @property (strong, nonatomic) MBProgressHUD *hud;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *photoButton;
 
 @end
 

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,15 +16,64 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="vMt-ZZ-PSg">
-                                <frame key="frameInset" minX="30" minY="96" width="260" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="vMt-ZZ-PSg">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="EWn-jr-xIq"/>
+                                    <constraint firstAttribute="width" constant="540" id="ShV-b2-2ln"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EWn-jr-xIq"/>
+                                        <exclude reference="ShV-b2-2ln"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="EWn-jr-xIq"/>
+                                        <include reference="ShV-b2-2ln"/>
+                                    </mask>
+                                </variation>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cp-hO-7yo">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoJardev" translatesAutoresizingMaskIntoConstraints="NO" id="Ii4-HQ-x5J"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Développé par Vincent JARDEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHQ-Ra-sqa">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ii4-HQ-x5J" firstAttribute="leading" secondItem="1cp-hO-7yo" secondAttribute="leading" id="CbU-HZ-nIL"/>
+                                    <constraint firstItem="rHQ-Ra-sqa" firstAttribute="centerY" secondItem="Ii4-HQ-x5J" secondAttribute="centerY" id="I9N-eX-Twu"/>
+                                    <constraint firstItem="rHQ-Ra-sqa" firstAttribute="leading" secondItem="Ii4-HQ-x5J" secondAttribute="trailing" id="OM6-Ni-PNp"/>
+                                    <constraint firstItem="rHQ-Ra-sqa" firstAttribute="centerX" secondItem="1cp-hO-7yo" secondAttribute="centerX" id="TNA-vp-XW0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ii4-HQ-x5J" secondAttribute="bottom" constant="5" id="aIa-AF-abr"/>
+                                    <constraint firstAttribute="bottom" secondItem="rHQ-Ra-sqa" secondAttribute="bottom" constant="10" id="fIL-KA-KKw"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="CbU-HZ-nIL"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1cp-hO-7yo" secondAttribute="trailing" id="ABe-rh-mdv"/>
+                            <constraint firstItem="1cp-hO-7yo" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:8" id="Ju5-Fh-b82"/>
+                            <constraint firstItem="1cp-hO-7yo" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="LSn-0E-dAw"/>
+                            <constraint firstAttribute="bottom" secondItem="1cp-hO-7yo" secondAttribute="bottom" id="Tep-hi-Iev"/>
+                            <constraint firstItem="vMt-ZZ-PSg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="avz-Lj-4Eg"/>
+                            <constraint firstItem="vMt-ZZ-PSg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="emV-Om-tpN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -33,5 +83,6 @@
     </scenes>
     <resources>
         <image name="logo" width="180" height="41"/>
+        <image name="logoJardev" width="60" height="60"/>
     </resources>
 </document>

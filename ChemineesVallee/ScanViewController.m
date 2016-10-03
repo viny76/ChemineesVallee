@@ -11,8 +11,6 @@
 @interface ScanViewController ()
 @end
 
-BOOL scanView;
-
 @implementation ScanViewController
 
 - (void)viewDidLoad {
@@ -24,59 +22,38 @@ BOOL scanView;
     [userContentController addUserScript:script];
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     configuration.userContentController = userContentController;
-
+    
     self.tabBarController.delegate = self;
     
-    // If it is present, create a WKWebView. If not, create a UIWebView.
-    if (NSClassFromString(@"WKWebView")) {
-        self.wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
-        self.view = self.wkWebView;
-        self.wkWebView.UIDelegate = self;
-        self.wkWebView.navigationDelegate = self;
-        if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
-            QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
-            self.vc = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Annuler" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
-            self.vc.modalPresentationStyle = UIModalPresentationFormSheet;
-            self.vc.delegate = self;
-            __weak typeof(self) weakSelf = self;
-            [self.vc setCompletionWithBlock:^(NSString *resultAsString) {
-                [weakSelf.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:resultAsString]]];
-            }];
-            
-            [self displayQRCodeView];
-        }
-        else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Le lecteur n'est pas supporté par l'appareil" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-        }
-    } else {
-        self.webView = [[UIWebView alloc] initWithFrame: [self.view bounds]];
-        self.webView.delegate = self;
-        self.view = self.webView;
-        if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
-            QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
-            self.vc = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Annuler" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
-            self.vc.modalPresentationStyle = UIModalPresentationFormSheet;
-            self.vc.delegate = self;
-            __weak typeof(self) weakSelf = self;
-            [self.vc setCompletionWithBlock:^(NSString *resultAsString) {
-                [weakSelf.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:resultAsString]]];
-            }];
-            
-            [self displayQRCodeView];
-        }
-        else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Le lecteur n'est pas supporté par l'appareil" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-        }
+    self.wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
+    self.view = self.wkWebView;
+    self.wkWebView.UIDelegate = self;
+    self.wkWebView.navigationDelegate = self;
+    if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
+        QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
+        self.vc = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Annuler" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
+        self.vc.modalPresentationStyle = UIModalPresentationFormSheet;
+        self.vc.delegate = self;
+        __weak typeof(self) weakSelf = self;
+        [self.vc setCompletionWithBlock:^(NSString *resultAsString) {
+            [weakSelf.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:resultAsString]]];
+            weakSelf.hud = [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+        }];
+        
+        [self.wkWebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+        
+        [self displayQRCodeView];
+        [self removeButton];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Le lecteur n'est pas supporté par l'appareil" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if (!scanView && [QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
-        [self displayQRCodeView];
-    }
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - QRCodeReader Delegate Methods
@@ -84,57 +61,17 @@ BOOL scanView;
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result {
     [reader stopScanning];
     [self removeQRCodeView];
+    [self displayButton];
 }
 
 - (void)readerDidCancel:(QRCodeReaderViewController *)reader {
+    [self.hud removeFromSuperview];
     [self.tabBarController setSelectedIndex:0];
 }
 
-- (void)tabBarController:(UITabBarController *)theTabBarController didSelectViewController:(UIViewController *)viewController {
-    if (theTabBarController.selectedIndex == 1 && ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]])) {
-        if (scanView) {
-        } else {
-            [self displayQRCodeView];
-        }
-    }
-}
-
-// UIWebView delegate
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    self.tabBarController.tabBar.userInteractionEnabled = NO;
-    scanView = NO;
-    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.hud hide:YES afterDelay:10.0];
-    self.hud.mode = MBProgressHUDModeIndeterminate;
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    scanView = NO;
-    if (!webView.isLoading) {
-        NSString *cssString = @"div#SITE_HEADER {display:none;} div#PAGES_CONTAINER {position: absolute !important; top: 1% !important; left: 0px !important;}";
-        NSString *javascriptString = @"var style = document.createElement('style'); style.innerHTML = '%@'; document.head.appendChild(style)";
-        NSString *javascriptWithCSSString = [NSString stringWithFormat:javascriptString, cssString];
-        [webView stringByEvaluatingJavaScriptFromString:javascriptWithCSSString];
-        [self.hud removeFromSuperview];
-        self.tabBarController.tabBar.userInteractionEnabled = YES;
-    }
-}
-
 // WKWebView delegate
-- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
-    self.tabBarController.tabBar.userInteractionEnabled = NO;
-    scanView = NO;
-    self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    [self.hud hide:YES afterDelay:10.0];
-    self.hud.mode = MBProgressHUDModeIndeterminate;
-}
-
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    scanView = NO;
-    if (!webView.isLoading) {
-        [self.hud removeFromSuperview];
-        self.tabBarController.tabBar.userInteractionEnabled = YES;
-    }
+    [self.hud setProgress:0.0];
 }
 
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
@@ -146,14 +83,10 @@ BOOL scanView;
 }
 
 - (void)displayQRCodeView {
-    if (![self.hud isHidden]) {
-        [self.hud removeFromSuperview];
-    }
     [self addChildViewController:self.vc];
     [self.view addSubview:self.vc.view];
     [self.vc didMoveToParentViewController:self];
     self.tabBarController.delegate = self;
-    scanView = YES;
 }
 
 - (void)removeQRCodeView {
@@ -161,5 +94,44 @@ BOOL scanView;
     [self.vc.view removeFromSuperview];
     [self.vc removeFromParentViewController];
 }
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self.hud setProgress:(float)self.wkWebView.estimatedProgress];
+    [self.wkWebView goBack];
+}
+
+- (void)displayButton {
+    [self.backButton setEnabled:YES];
+    [self.backButton setTintColor:nil];
+    [self.photoButton setEnabled:YES];
+}
+
+- (void)removeButton {
+    [self.backButton setEnabled:NO];
+    [self.backButton setTintColor: [UIColor clearColor]];
+    [self.photoButton setEnabled:NO];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        if (self.wkWebView.estimatedProgress == 1) {
+            [self.hud removeFromSuperview];
+            self.hud.hidden = YES;
+        } else {
+            self.hud.hidden = NO;
+        }
+        
+        [self.hud setProgress:(float)self.wkWebView.estimatedProgress];
+    }
+}
+
+- (IBAction)photoButton:(id)sender {
+    [self displayQRCodeView];
+    [self removeButton];
+}
+
 
 @end

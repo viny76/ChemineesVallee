@@ -19,7 +19,7 @@
 		2C59D4151D91EAAB00D48531 /* ActualitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59D4141D91EAAB00D48531 /* ActualitesViewController.m */; };
 		2C59D4181D91EBF500D48531 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59D4171D91EBF500D48531 /* LoginViewController.m */; };
 		2CB94B7E1D927BFB00CE8ACC /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB94B7D1D927BFB00CE8ACC /* ContactViewController.m */; };
-		2CCAF17E1D931E4100AFDCA5 /* EvenementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCAF17D1D931E4100AFDCA5 /* EvenementsViewController.m */; };
+		2CCAF17E1D931E4100AFDCA5 /* EspaceProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCAF17D1D931E4100AFDCA5 /* EspaceProViewController.m */; };
 		2CCAF1821D9320D100AFDCA5 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCAF1811D9320D100AFDCA5 /* UIColor+CustomColors.m */; };
 		2CD189501D9AB26A006DCAFD /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD1894F1D9AB26A006DCAFD /* NotificationViewController.m */; };
 		529DBEF17A59D9928DE2E0BB /* libPods-ChemineesValleeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C15CDCB0681D6CF9B88B5D46 /* libPods-ChemineesValleeTests.a */; };
@@ -68,8 +68,8 @@
 		2CB94B7C1D927BFB00CE8ACC /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		2CB94B7D1D927BFB00CE8ACC /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		2CB94B811D9291EF00CE8ACC /* CustomFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFonts.h; sourceTree = "<group>"; };
-		2CCAF17C1D931E4100AFDCA5 /* EvenementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvenementsViewController.h; sourceTree = "<group>"; };
-		2CCAF17D1D931E4100AFDCA5 /* EvenementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvenementsViewController.m; sourceTree = "<group>"; };
+		2CCAF17C1D931E4100AFDCA5 /* EspaceProViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EspaceProViewController.h; sourceTree = "<group>"; };
+		2CCAF17D1D931E4100AFDCA5 /* EspaceProViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EspaceProViewController.m; sourceTree = "<group>"; };
 		2CCAF1801D9320D100AFDCA5 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		2CCAF1811D9320D100AFDCA5 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		2CD1894E1D9AB26A006DCAFD /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 				2CD1894F1D9AB26A006DCAFD /* NotificationViewController.m */,
 				2C25FF6F1D90321D003819A9 /* ScanViewController.h */,
 				2C25FF701D90321D003819A9 /* ScanViewController.m */,
-				2CCAF17C1D931E4100AFDCA5 /* EvenementsViewController.h */,
-				2CCAF17D1D931E4100AFDCA5 /* EvenementsViewController.m */,
+				2CCAF17C1D931E4100AFDCA5 /* EspaceProViewController.h */,
+				2CCAF17D1D931E4100AFDCA5 /* EspaceProViewController.m */,
 				2CB94B7C1D927BFB00CE8ACC /* ContactViewController.h */,
 				2CB94B7D1D927BFB00CE8ACC /* ContactViewController.m */,
 				2C25FF751D90321D003819A9 /* Assets.xcassets */,
@@ -301,6 +301,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -498,7 +501,7 @@
 				2CB94B7E1D927BFB00CE8ACC /* ContactViewController.m in Sources */,
 				2C25FF6E1D90321D003819A9 /* AppDelegate.m in Sources */,
 				2C25FF6B1D90321D003819A9 /* main.m in Sources */,
-				2CCAF17E1D931E4100AFDCA5 /* EvenementsViewController.m in Sources */,
+				2CCAF17E1D931E4100AFDCA5 /* EspaceProViewController.m in Sources */,
 				2CD189501D9AB26A006DCAFD /* NotificationViewController.m in Sources */,
 				2C59D4151D91EAAB00D48531 /* ActualitesViewController.m in Sources */,
 				2CCAF1821D9320D100AFDCA5 /* UIColor+CustomColors.m in Sources */,
@@ -579,7 +582,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Vincent Jardel (2NB67X8DYS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Vincent Jardel (2NB67X8DYS)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -598,7 +602,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -628,7 +632,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Vincent Jardel (2NB67X8DYS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -641,7 +646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,12 +660,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ChemineesVallee/ChemineesVallee.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2NB67X8DYS;
 				INFOPLIST_FILE = ChemineesVallee/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jardev.ChemineesVallee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -670,12 +677,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ChemineesVallee/ChemineesVallee.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2NB67X8DYS;
 				INFOPLIST_FILE = ChemineesVallee/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jardev.ChemineesVallee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -743,7 +752,7 @@
 				2C25FF921D90321D003819A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2C25FF931D90321D003819A9 /* Build configuration list for PBXNativeTarget "ChemineesVallee" */ = {
 			isa = XCConfigurationList;
@@ -752,7 +761,7 @@
 				2C25FF951D90321D003819A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2C25FF961D90321D003819A9 /* Build configuration list for PBXNativeTarget "ChemineesValleeTests" */ = {
 			isa = XCConfigurationList;
@@ -761,7 +770,7 @@
 				2C25FF981D90321D003819A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2C25FF991D90321D003819A9 /* Build configuration list for PBXNativeTarget "ChemineesValleeUITests" */ = {
 			isa = XCConfigurationList;
@@ -770,7 +779,7 @@
 				2C25FF9B1D90321D003819A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

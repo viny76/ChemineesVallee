@@ -6,13 +6,13 @@
 //  Copyright © 2016 Vincent Jardel. All rights reserved.
 //
 
-#import "EvenementsViewController.h"
+#import "EspaceProViewController.h"
 #import "AppDelegate.h"
 
-@interface EvenementsViewController ()
+@interface EspaceProViewController ()
 @end
 
-@implementation EvenementsViewController
+@implementation EspaceProViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,20 +36,20 @@
         self.view = self.wkWebView;
         self.wkWebView.UIDelegate = self;
         self.wkWebView.navigationDelegate = self;
-        [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/evenements"]]];
+        [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/espace-pro"]]];
     } else {
         self.webView = [[UIWebView alloc] initWithFrame: [self.view bounds]];
         self.webView.delegate = self;
         self.view = self.webView;
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/evenements"]]];
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/espace-pro"]]];
     }
 }
 
 // UIWebView delegate
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    self.tabBarController.tabBar.userInteractionEnabled = NO;
+//    self.tabBarController.tabBar.userInteractionEnabled = NO;
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.hud hide:YES afterDelay:10.0];
+//    [self.hud hide:YES afterDelay:3.0];
     self.hud.mode = MBProgressHUDModeIndeterminate;
 }
 
@@ -60,22 +60,22 @@
         NSString *javascriptWithCSSString = [NSString stringWithFormat:javascriptString, cssString];
         [webView stringByEvaluatingJavaScriptFromString:javascriptWithCSSString];
         [self.hud removeFromSuperview];
-        self.tabBarController.tabBar.userInteractionEnabled = YES;
+//        self.tabBarController.tabBar.userInteractionEnabled = YES;
     }
 }
 
 // WKWebView delegate
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
-    self.tabBarController.tabBar.userInteractionEnabled = NO;
+//    self.tabBarController.tabBar.userInteractionEnabled = NO;
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.hud hide:YES afterDelay:10.0];
+//    [self.hud hide:YES afterDelay:3.0];
     self.hud.mode = MBProgressHUDModeIndeterminate;
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     if (!webView.isLoading) {
         [self.hud removeFromSuperview];
-        self.tabBarController.tabBar.userInteractionEnabled = YES;
+//        self.tabBarController.tabBar.userInteractionEnabled = YES;
     }
 }
 
@@ -88,7 +88,7 @@
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    if ([navigationAction.request.URL.absoluteString isEqualToString:@"http://www.chemineesvallee.com/evenements"] || [navigationAction.request.URL.absoluteString isEqualToString:@"mailto:info@chemineesvallee.com"] || [navigationAction.request.URL.absoluteString isEqualToString:@"tel:0235983750"] || [navigationAction.request.URL.absoluteString hasPrefix:@"https://wix-pop-up.appspot.com/app"]) {
+    if ([navigationAction.request.URL.absoluteString isEqualToString:@"http://www.chemineesvallee.com/espace-pro"] || [navigationAction.request.URL.absoluteString isEqualToString:@"http://www.chemineesvallee.com/fiches-techniques"] || [navigationAction.request.URL.absoluteString containsString:@"mailto:"] || [navigationAction.request.URL.absoluteString containsString:@"tel:0235983750"] || [navigationAction.request.URL.absoluteString hasPrefix:@"https://wix-pop-up.appspot.com/app"] || [navigationAction.request.URL.absoluteString isEqualToString:@"https://www.instagram.com/cheminees_vallee/"]) {
         [self.backButton setEnabled:NO];
         [self.backButton setTintColor: [UIColor clearColor]];
     } else {
@@ -105,9 +105,9 @@
         [self.hud removeFromSuperview];
     }
     if (NSClassFromString(@"WKWebView")) {
-        [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/evenements"]]];
+        [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/espace-pro"]]];
     } else {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/evenements"]]];
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/espace-pro"]]];
     }
 }
 

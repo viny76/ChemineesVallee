@@ -23,12 +23,26 @@
                     </view>
                     <navigationItem key="navigationItem" id="HAt-Pb-zEa">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="back" id="Baa-qf-jl2">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="BYZ-38-t0r" id="IZ7-rQ-gX8"/>
+                            </connections>
+                        </barButtonItem>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GCA-e4-zPN">
                             <rect key="frame" x="70" y="2" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                         </button>
+                        <barButtonItem key="rightBarButtonItem" image="camera" id="lXR-1F-5IE">
+                            <connections>
+                                <action selector="photoButton:" destination="BYZ-38-t0r" id="qhP-BR-szI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="Baa-qf-jl2" id="t1v-Xb-K0q"/>
+                        <outlet property="photoButton" destination="lXR-1F-5IE" id="mET-rT-lv0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +112,7 @@
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="voU-bi-YHb">
-                            <rect key="frame" x="70" y="2" width="180" height="41"/>
+                            <rect key="frame" x="70" y="1.5" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                             <connections>
@@ -151,6 +165,9 @@
                                                 <color key="textColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                                </variation>
                                                 <connections>
                                                     <outlet property="delegate" destination="DCK-sS-ZvQ" id="OHq-X1-2TS"/>
                                                 </connections>
@@ -165,6 +182,9 @@
                                                 <color key="textColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                                </variation>
                                                 <connections>
                                                     <outlet property="delegate" destination="DCK-sS-ZvQ" id="nte-1c-m0d"/>
                                                 </connections>
@@ -172,12 +192,25 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm7-xx-WZ6">
                                                 <color key="backgroundColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="180" id="fM1-HP-oDU"/>
+                                                    <constraint firstAttribute="width" constant="120" id="BYR-cW-VQA"/>
+                                                    <constraint firstAttribute="width" constant="300" id="fM1-HP-oDU"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                 <state key="normal" title="Se Connecter">
                                                     <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="fM1-HP-oDU"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="28"/>
+                                                    <mask key="constraints">
+                                                        <exclude reference="BYR-cW-VQA"/>
+                                                        <include reference="fM1-HP-oDU"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <action selector="login" destination="DCK-sS-ZvQ" eventType="touchUpInside" id="5gc-Gx-2fg"/>
                                                 </connections>
@@ -255,7 +288,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-sO-Cnj">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="xHO-mN-vh3" id="cRO-M3-31m"/>
                                 </connections>
@@ -263,11 +299,24 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUG-CX-WX1">
                                 <color key="backgroundColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="0ln-wd-aWh"/>
                                     <constraint firstAttribute="width" constant="120" id="2wL-Mi-hdC"/>
                                 </constraints>
                                 <state key="normal" title="Envoyer">
                                     <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0ln-wd-aWh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                    <mask key="constraints">
+                                        <include reference="0ln-wd-aWh"/>
+                                        <exclude reference="2wL-Mi-hdC"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="sendNotification:" destination="xHO-mN-vh3" eventType="touchUpInside" id="Tbf-7l-HDg"/>
                                 </connections>
@@ -293,7 +342,7 @@
                         </button>
                     </navigationItem>
                     <connections>
-                        <outlet property="notificationText" destination="ACa-sO-Cnj" id="MPd-Yj-dWH"/>
+                        <outlet property="notificationText" destination="ACa-sO-Cnj" id="CRd-Iv-ZLC"/>
                         <outlet property="sendButton" destination="hUG-CX-WX1" id="hQt-pj-gLn"/>
                     </connections>
                 </viewController>
@@ -337,7 +386,7 @@
                                 <color key="textColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQz-Gl-PMP">
@@ -373,7 +422,7 @@
                                 <color key="textColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5m-U8-GXT">
@@ -383,7 +432,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="phoneButton:" destination="Dsc-O6-LNx" eventType="touchUpInside" id="kQf-8b-lva"/>
@@ -445,7 +494,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5o7-rN-FFF" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2962.5" y="1154.5774647887324"/>
+            <point key="canvasLocation" x="2923" y="1993"/>
         </scene>
         <!--Contact-->
         <scene sceneID="bXg-h9-ide">
@@ -465,12 +514,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tep-Ay-R7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965" y="1154.5774647887324"/>
+            <point key="canvasLocation" x="1992" y="1993"/>
         </scene>
-        <!--Evenements View Controller-->
+        <!--Espace Pro View Controller-->
         <scene sceneID="5JQ-MA-D6T">
             <objects>
-                <viewController id="9ev-fS-ajG" customClass="EvenementsViewController" sceneMemberID="viewController">
+                <viewController id="9ev-fS-ajG" customClass="EspaceProViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uy9-ky-waq"/>
                         <viewControllerLayoutGuide type="bottom" id="0Aa-bp-3CB"/>
@@ -509,7 +558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGD-v2-xZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964.375" y="1851.7605633802816"/>
+            <point key="canvasLocation" x="2923" y="1208"/>
         </scene>
         <!--Événements-->
         <scene sceneID="sXJ-8z-NcV">
@@ -528,7 +577,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8g-UU-W9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966.875" y="1851.7605633802816"/>
+            <point key="canvasLocation" x="1992" y="1208"/>
         </scene>
         <!--Scan-->
         <scene sceneID="KfV-xf-pyt">
@@ -572,6 +621,7 @@
         <image name="QRCode" width="30" height="30"/>
         <image name="back" width="16" height="16"/>
         <image name="calendar" width="30" height="30"/>
+        <image name="camera" width="30" height="30"/>
         <image name="contact" width="30" height="30"/>
         <image name="email" width="25" height="25"/>
         <image name="logo" width="180" height="41"/>

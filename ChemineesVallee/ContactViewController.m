@@ -31,7 +31,7 @@
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             // iPad
             zoom = 16;
-            const CGFloat fontSize = 36;
+            const CGFloat fontSize = 30;
             NSDictionary *attrs = @{
                                     NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Bold" size:fontSize],
                                     NSForegroundColorAttributeName:[UIColor colorWhite]

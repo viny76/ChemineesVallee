@@ -7,6 +7,7 @@
 //
 
 #import "NotificationViewController.h"
+#import <Parse/Parse.h>
 
 @interface NotificationViewController ()
 @end
@@ -30,7 +31,19 @@
 }
 
 - (IBAction)sendNotification:(id)sender {
-    
+    [self.notificationText endEditing:YES];
+    if (self.notificationText.text.length > 0 || self.notificationText.text != nil || ![self.notificationText.text isEqual:@""]) {
+        [PFCloud callFunctionInBackground:@"pushMessageNotification" withParameters:@{@"message" : self.notificationText.text} block:^(id object, NSError *error) {
+            if (!error) {
+                NSLog(@"YES");
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Succès" message:@"Message envoyé !" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Vérifiez votre connexion" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+        }];
+    }
 }
 
 @end

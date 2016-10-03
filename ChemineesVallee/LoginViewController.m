@@ -51,6 +51,9 @@
                                              UIAlertView *alertViewSignUp = [[UIAlertView alloc] initWithTitle:@"Erreur !" message:@"Echec de connexion." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                                              [alertViewSignUp show];
                                          } else {
+                                             PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+                                             [currentInstallation setObject:[PFUser currentUser].objectId forKey: @"userId"];
+                                             [currentInstallation saveInBackground];
                                              //GOOD LOGIN
                                              [self.navigationController popViewControllerAnimated:YES];
                                              [self.hud removeFromSuperview];
