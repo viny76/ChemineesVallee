@@ -13,11 +13,10 @@
 #import "MBProgressHUD.h"
 #import <WebKit/WebKit.h>
 
-@interface ScanViewController : QRCodeReaderViewController <QRCodeReaderDelegate, UIWebViewDelegate, UITabBarDelegate, UITabBarControllerDelegate, WKNavigationDelegate, WKUIDelegate, MBProgressHUDDelegate>
+@interface ScanViewController : QRCodeReaderViewController <QRCodeReaderDelegate, UITabBarDelegate, UITabBarControllerDelegate, WKNavigationDelegate, WKUIDelegate, MBProgressHUDDelegate>
 
 @property (strong, nonatomic) QRCodeReaderViewController *vc;
 @property (retain, nonatomic) WKWebView *wkWebView;
-@property (retain, nonatomic) UIWebView *webView;
 @property (strong, nonatomic) MBProgressHUD *hud;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *photoButton;

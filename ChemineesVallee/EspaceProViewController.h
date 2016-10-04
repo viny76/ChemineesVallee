@@ -10,11 +10,11 @@
 #import <WebKit/WebKit.h>
 #import "MBProgressHUD.h"
 
-@interface EspaceProViewController : UIViewController <UITabBarDelegate, UITabBarControllerDelegate, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, MBProgressHUDDelegate>
+@interface EspaceProViewController : UIViewController <UITabBarDelegate, UITabBarControllerDelegate, WKNavigationDelegate, WKUIDelegate, MBProgressHUDDelegate>
 
 @property (strong, nonatomic) MBProgressHUD *hud;
 @property (retain, nonatomic) WKWebView *wkWebView;
-@property (retain, nonatomic) UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *homeButton;
 
 @end

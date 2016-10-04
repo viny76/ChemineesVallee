@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -77,7 +77,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tv8-zs-tyh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Actualités" image="news" id="J7R-uu-kSf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5qr-lr-ylx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5qr-lr-ylx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -99,7 +99,7 @@
                         <viewControllerLayoutGuide type="bottom" id="06b-tu-SZa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="88t-t1-4Yi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -112,14 +112,14 @@
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="voU-bi-YHb">
-                            <rect key="frame" x="70" y="1.5" width="180" height="41"/>
+                            <rect key="frame" x="70" y="2" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                             <connections>
                                 <action selector="logoTouched:" destination="ZiI-Uv-Xj7" eventType="touchUpInside" id="af1-C4-IDl"/>
                             </connections>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="yr2-2e-5c0">
+                        <barButtonItem key="rightBarButtonItem" id="yr2-2e-5c0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Tx-rx-fRV">
                                 <rect key="frame" x="274" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -148,7 +148,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hlM-ST-fSc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YXS-yo-I5u">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFh-0A-5Br" customClass="TPKeyboardAvoidingScrollView">
@@ -215,6 +215,18 @@
                                                     <action selector="login" destination="DCK-sS-ZvQ" eventType="touchUpInside" id="5gc-Gx-2fg"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlX-gY-PPQ">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" title="Mentions Légales">
+                                                    <color key="titleColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                </variation>
+                                                <connections>
+                                                    <segue destination="Jdk-SR-ftZ" kind="show" id="EMN-3U-kNR"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -222,6 +234,8 @@
                                             <constraint firstItem="fm7-xx-WZ6" firstAttribute="top" secondItem="lBu-9M-KQb" secondAttribute="bottom" constant="20" id="SuM-rF-iCq"/>
                                             <constraint firstItem="fm7-xx-WZ6" firstAttribute="centerX" secondItem="zFC-vA-JTS" secondAttribute="centerX" id="Ums-dP-P9x"/>
                                             <constraint firstItem="46d-aJ-3hI" firstAttribute="centerX" secondItem="zFC-vA-JTS" secondAttribute="centerX" id="mXd-1I-UlA"/>
+                                            <constraint firstAttribute="bottom" secondItem="UlX-gY-PPQ" secondAttribute="bottom" constant="10" id="wqU-7z-dUm"/>
+                                            <constraint firstItem="UlX-gY-PPQ" firstAttribute="centerX" secondItem="zFC-vA-JTS" secondAttribute="centerX" id="x00-Do-MNR"/>
                                             <constraint firstItem="lBu-9M-KQb" firstAttribute="top" secondItem="46d-aJ-3hI" secondAttribute="bottom" constant="20" id="x8K-w8-Bl2"/>
                                         </constraints>
                                     </view>
@@ -253,7 +267,6 @@
                             <state key="normal" image="logo"/>
                         </button>
                     </navigationItem>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="YXS-yo-I5u" id="Tpo-jg-XU9"/>
                         <outlet property="emailField" destination="46d-aJ-3hI" id="G9P-xo-1pV"/>
@@ -265,6 +278,76 @@
             </objects>
             <point key="canvasLocation" x="3705" y="-520"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ewu-Or-LIf">
+            <objects>
+                <viewController id="Jdk-SR-ftZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rtA-dY-gyh"/>
+                        <viewControllerLayoutGuide type="bottom" id="EDc-DY-4od"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Ca-sQ-rRn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h2V-eH-p0M">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Cheminées VALLÉE
+17 rue de la république 
+76000 ROUEN
+FRANCE
+ 
+Capital social : 1 000 000 €
+Siège social : 
+Rue de la libération BP 20,
+AUFFAY 76720
+FRANCE
+ 
+R.C.S (Registre du commerce et des sociétés) : 
+ 
+n° Siret : 814 826 509 000 22
+ 
+APE : 4752A
+ 
+Tel. 02 35 32 46 12
+ 
+Crédits
+Conception, création graphique et développement : JARDEL Vincent
+Application réalisée avec Xcode en Objective-C.
+ 
+Crédits photos :
+©SPARTHERM ©FOCUS ©METALFIRE ©GODIN ©MCZ ©POLYFLAM ©PIROS
+ 
+Tous droits réservés
+Tout utilisateur de cette application mobile est considéré comme ayant accepté l’application des lois françaises actuellement en vigueur. Il est tenu de respecter les dispositions de la loi Informatique et libertés dont la violation est passible de sanctions pénales. L’ensemble des éléments composant cette application sont la propriété exclusive de l’éditeur. Cette application est une œuvre protégée par la législation sur la propriété intellectuelle. Toute reproduction ou représentation faite sans l’accord de l’éditeur constitue une contrefaçon. Seule une utilisation à des fins strictement personnelles est autorisée.
+ 
+L’ensemble de cette application relève de la législation française et internationale sur le droit d’auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques. La reproduction de tout ou partie de cette application sur quelque support que ce soit est formellement interdite sauf autorisation expresse de l’éditeur.
+Droits de reproduction et de diffusion réservés © SAS CHEMINEE VALLÉE.
+ 
+Malgré tous les soins apportés à la réalisation de cette application et à son actualisation régulière, des erreurs peuvent s’être glissées dans les informations et/ou documents présentés. Les utilisateurs du site procéderont donc à toutes vérifications utiles.
+ 
+Informatique et libertés
+Conformément aux lois en vigueur, les informations collectées par le biais de nos formulaires sont exclusivement communiquées à l’éditeur et ne sont communiqués à aucun tiers.
+ 
+Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes les mesures appropriées de façon à protéger ses propres données et/ou logiciels de la contamination par d’éventuels virus circulant sur le réseau Internet. L’éditeur décline toute responsabilité à un éventuel dommage survenu pendant la consultation ou après un téléchargement effectué à partir du présent site. L’utilisateur reconnaît avoir été informé que le présent site est accessible 24 h/24 et 7 j/7, à l’exception des cas de force majeure, difficultés informatiques ou difficultés techniques. Nous ne pouvons assurer la confidentialité des messages que vous pouvez nous adresser transitant par un réseau ouvert de télécommunications. Les liens vers d’autres sites/applications ne sont communiqués qu’à titre indicatif et ne sauraient en aucun cas engager la responsabilité de l’éditeur, tant en ce qui concerne leur contenu que les conditions d’accès.</mutableString>
+                                <color key="textColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="h2V-eH-p0M" firstAttribute="leading" secondItem="3Ca-sQ-rRn" secondAttribute="leading" constant="10" id="ZAE-wZ-1xJ"/>
+                            <constraint firstItem="EDc-DY-4od" firstAttribute="top" secondItem="h2V-eH-p0M" secondAttribute="bottom" constant="10" id="ePl-ia-B0V"/>
+                            <constraint firstAttribute="trailing" secondItem="h2V-eH-p0M" secondAttribute="trailing" constant="10" id="tGW-MR-252"/>
+                            <constraint firstItem="h2V-eH-p0M" firstAttribute="top" secondItem="rtA-dY-gyh" secondAttribute="bottom" constant="10" id="ucF-2s-AMH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3w2-fX-ur9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4408" y="-521"/>
+        </scene>
         <!--Notification View Controller-->
         <scene sceneID="ohx-Vn-tyy">
             <objects>
@@ -274,7 +357,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PZf-fU-1fn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GMH-Ac-Jnc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-2D-hdi">
@@ -359,7 +442,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aJU-tA-b3T"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5bB-Et-XiN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contactez-nous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IN6-K5-hTb">
@@ -370,6 +453,17 @@
                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="50"/>
                                 </variation>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="apg-n2-t49">
+                                <segments>
+                                    <segment title="Showroom"/>
+                                    <segment title="Siège"/>
+                                    <segment title="Magasin"/>
+                                </segments>
+                                <color key="tintColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentSwitch:" destination="Dsc-O6-LNx" eventType="valueChanged" id="PHF-ZI-7vG"/>
+                                </connections>
+                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Imt-dX-uAZ">
                                 <string key="text">Cheminées VALLÉE.
 17 Rue de la République,
@@ -443,15 +537,16 @@
                         <constraints>
                             <constraint firstItem="fkp-6o-RfN" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="0.4" id="0Dj-fF-fgb"/>
                             <constraint firstItem="fkp-6o-RfN" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="1:3" id="4Ez-1O-pJD"/>
-                            <constraint firstItem="Imt-dX-uAZ" firstAttribute="top" secondItem="IN6-K5-hTb" secondAttribute="bottom" constant="20" id="4hO-b6-cdy"/>
                             <constraint firstItem="HtM-cr-JS2" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="1:10" id="5GU-ok-WKI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Imt-dX-uAZ" secondAttribute="trailing" constant="10" id="5WH-Ah-7BV"/>
                             <constraint firstAttribute="trailing" secondItem="fkp-6o-RfN" secondAttribute="trailing" constant="10" id="9LU-e1-s7B"/>
+                            <constraint firstItem="apg-n2-t49" firstAttribute="width" secondItem="IN6-K5-hTb" secondAttribute="width" id="9da-nA-1uh"/>
                             <constraint firstItem="HtM-cr-JS2" firstAttribute="top" secondItem="Knm-yn-XjB" secondAttribute="bottom" constant="10" id="AS1-5n-AgN"/>
                             <constraint firstItem="HtM-cr-JS2" firstAttribute="leading" secondItem="5bB-Et-XiN" secondAttribute="leading" constant="10" id="Dwn-Fh-a6z"/>
                             <constraint firstItem="HtM-cr-JS2" firstAttribute="centerY" secondItem="dQz-Gl-PMP" secondAttribute="centerY" id="GbB-fI-SWh"/>
                             <constraint firstItem="Imt-dX-uAZ" firstAttribute="leading" secondItem="5bB-Et-XiN" secondAttribute="leading" constant="10" id="KoW-oK-wrg"/>
                             <constraint firstItem="Knm-yn-XjB" firstAttribute="top" secondItem="fkp-6o-RfN" secondAttribute="bottom" constant="20" id="O10-es-kPm"/>
+                            <constraint firstItem="Imt-dX-uAZ" firstAttribute="top" secondItem="apg-n2-t49" secondAttribute="bottom" id="Oul-8w-PG9"/>
                             <constraint firstItem="IN6-K5-hTb" firstAttribute="top" secondItem="DeK-CJ-9aK" secondAttribute="bottom" id="QLA-8v-hvn"/>
                             <constraint firstItem="Knm-yn-XjB" firstAttribute="leading" secondItem="5bB-Et-XiN" secondAttribute="leading" constant="10" id="QcZ-6L-dsj"/>
                             <constraint firstItem="Imt-dX-uAZ" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="1:6" id="RI3-JW-3gg"/>
@@ -459,6 +554,8 @@
                             <constraint firstItem="U5m-U8-GXT" firstAttribute="centerY" secondItem="Knm-yn-XjB" secondAttribute="centerY" id="SUA-I9-n34"/>
                             <constraint firstItem="dQz-Gl-PMP" firstAttribute="leading" secondItem="HtM-cr-JS2" secondAttribute="trailing" constant="5" id="UfD-49-u1j"/>
                             <constraint firstItem="Knm-yn-XjB" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="1:10" id="gaz-ZD-ibT"/>
+                            <constraint firstItem="apg-n2-t49" firstAttribute="centerX" secondItem="5bB-Et-XiN" secondAttribute="centerX" id="hEl-y9-SST"/>
+                            <constraint firstItem="apg-n2-t49" firstAttribute="top" secondItem="IN6-K5-hTb" secondAttribute="bottom" id="iA7-8H-C6c"/>
                             <constraint firstItem="U5m-U8-GXT" firstAttribute="height" secondItem="Knm-yn-XjB" secondAttribute="height" id="m0R-Mk-pIi"/>
                             <constraint firstItem="fkp-6o-RfN" firstAttribute="height" secondItem="5bB-Et-XiN" secondAttribute="height" multiplier="0.4" id="m1U-33-N3N"/>
                             <constraint firstItem="fkp-6o-RfN" firstAttribute="top" secondItem="Imt-dX-uAZ" secondAttribute="bottom" constant="10" id="mtR-fw-qGG"/>
@@ -490,6 +587,8 @@
                     <connections>
                         <outlet property="addressLabel" destination="Imt-dX-uAZ" id="D4B-lE-Psi"/>
                         <outlet property="mapView" destination="fkp-6o-RfN" id="uEM-EB-hcQ"/>
+                        <outlet property="phoneButton" destination="U5m-U8-GXT" id="vZR-i9-6Hi"/>
+                        <outlet property="segmentControl" destination="apg-n2-t49" id="XWA-I6-MK7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5o7-rN-FFF" sceneMemberID="firstResponder"/>
@@ -502,7 +601,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IGd-pe-JBo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contact" image="contact" id="tiC-uK-9zW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6xD-0w-wXI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6xD-0w-wXI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -525,7 +624,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0Aa-bp-3CB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Oaw-f9-43f">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -537,36 +636,37 @@
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t4L-re-Lth">
-                            <rect key="frame" x="70" y="2" width="180" height="41"/>
+                            <rect key="frame" x="98" y="2" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Nb7-uI-jmD">
+                        <barButtonItem key="rightBarButtonItem" id="Nb7-uI-jmD">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tIW-gj-u0H">
-                                <rect key="frame" x="274" y="7" width="30" height="30"/>
+                                <rect key="frame" x="329" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="refresh"/>
                                 <connections>
-                                    <action selector="refreshButton:" destination="9ev-fS-ajG" eventType="touchUpInside" id="cyc-dN-oQl"/>
+                                    <action selector="refreshButton:" destination="9ev-fS-ajG" eventType="touchUpInside" id="Yu9-bO-JhM"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="MUv-Yc-PM7" id="PSx-6o-6IX"/>
+                        <outlet property="homeButton" destination="tIW-gj-u0H" id="LCV-lL-qoc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGD-v2-xZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2923" y="1208"/>
         </scene>
-        <!--Événements-->
+        <!--Espace Pro-->
         <scene sceneID="sXJ-8z-NcV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k77-xK-lWH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Événements" image="calendar" id="C8X-xR-l7f"/>
+                    <tabBarItem key="tabBarItem" title="Espace Pro" image="espacePro" id="C8X-xR-l7f"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7UC-nG-9Tt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7UC-nG-9Tt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -585,7 +685,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uxy-Mh-B03" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Scan" image="QRCode" id="V4u-m7-UkZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="apR-Gq-EUZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="apR-Gq-EUZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -601,9 +701,9 @@
         <!--Navigation Controller-->
         <scene sceneID="z3S-iT-LwV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2La-Uv-NPv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="notifNavigation" automaticallyAdjustsScrollViewInsets="NO" id="2La-Uv-NPv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XKY-vT-LrU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XKY-vT-LrU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -620,10 +720,10 @@
     <resources>
         <image name="QRCode" width="30" height="30"/>
         <image name="back" width="16" height="16"/>
-        <image name="calendar" width="30" height="30"/>
         <image name="camera" width="30" height="30"/>
         <image name="contact" width="30" height="30"/>
         <image name="email" width="25" height="25"/>
+        <image name="espacePro" width="30" height="30"/>
         <image name="logo" width="180" height="41"/>
         <image name="news" width="30" height="30"/>
         <image name="refresh" width="30" height="30"/>

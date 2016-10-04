@@ -12,6 +12,9 @@
 
 @interface ContactViewController : UIViewController <MFMailComposeViewControllerDelegate, UITabBarDelegate, UITabBarControllerDelegate>
 @property (strong, nonatomic) IBOutlet GMSMapView *mapView;
+@property (strong, nonatomic) GMSMarker *marker;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+@property (weak, nonatomic) IBOutlet UIButton *phoneButton;
 
 @end

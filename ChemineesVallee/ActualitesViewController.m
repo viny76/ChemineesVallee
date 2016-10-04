@@ -36,6 +36,16 @@
     self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
@@ -49,16 +59,6 @@
         
         [self.hud setProgress:(float)self.wkWebView.estimatedProgress];
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.tabBarController.tabBar setHidden:NO];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 // WKWebView delegate
@@ -75,6 +75,9 @@
 }
 
 - (IBAction)refreshButton:(id)sender {
+    if (![self.hud isHidden]) {
+        [self.hud removeFromSuperview];
+    }
     [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.chemineesvallee.com/actualites"]]];
 }
 
