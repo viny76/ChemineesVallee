@@ -29,7 +29,7 @@
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GCA-e4-zPN">
-                            <rect key="frame" x="70" y="2" width="180" height="41"/>
+                            <rect key="frame" x="70" y="1.5" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                         </button>
@@ -77,7 +77,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tv8-zs-tyh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Actualités" image="news" id="J7R-uu-kSf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5qr-lr-ylx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5qr-lr-ylx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -142,7 +142,7 @@
         <!--LoginViewController-->
         <scene sceneID="IBO-5T-BfU">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DCK-sS-ZvQ" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DCK-sS-ZvQ" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n7c-gu-Ney"/>
                         <viewControllerLayoutGuide type="bottom" id="hlM-ST-fSc"/>
@@ -151,7 +151,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFh-0A-5Br" customClass="TPKeyboardAvoidingScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFh-0A-5Br" customClass="TPKeyboardAvoidingScrollView">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFC-vA-JTS" userLabel="Content View">
                                         <subviews>
@@ -215,18 +215,6 @@
                                                     <action selector="login" destination="DCK-sS-ZvQ" eventType="touchUpInside" id="5gc-Gx-2fg"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlX-gY-PPQ">
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <state key="normal" title="Mentions Légales">
-                                                    <color key="titleColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                </variation>
-                                                <connections>
-                                                    <segue destination="Jdk-SR-ftZ" kind="show" id="EMN-3U-kNR"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -234,12 +222,11 @@
                                             <constraint firstItem="fm7-xx-WZ6" firstAttribute="top" secondItem="lBu-9M-KQb" secondAttribute="bottom" constant="20" id="SuM-rF-iCq"/>
                                             <constraint firstItem="fm7-xx-WZ6" firstAttribute="centerX" secondItem="zFC-vA-JTS" secondAttribute="centerX" id="Ums-dP-P9x"/>
                                             <constraint firstItem="46d-aJ-3hI" firstAttribute="centerX" secondItem="zFC-vA-JTS" secondAttribute="centerX" id="mXd-1I-UlA"/>
-                                            <constraint firstAttribute="bottom" secondItem="UlX-gY-PPQ" secondAttribute="bottom" constant="10" id="wqU-7z-dUm"/>
-                                            <constraint firstItem="UlX-gY-PPQ" firstAttribute="centerX" secondItem="zFC-vA-JTS" secondAttribute="centerX" id="x00-Do-MNR"/>
                                             <constraint firstItem="lBu-9M-KQb" firstAttribute="top" secondItem="46d-aJ-3hI" secondAttribute="bottom" constant="20" id="x8K-w8-Bl2"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="zFC-vA-JTS" secondAttribute="bottom" id="6WG-DN-zxM"/>
                                     <constraint firstItem="zFC-vA-JTS" firstAttribute="leading" secondItem="gFh-0A-5Br" secondAttribute="leading" id="Dxb-tV-oI6"/>
@@ -249,9 +236,22 @@
                                     <constraint firstAttribute="trailing" secondItem="zFC-vA-JTS" secondAttribute="trailing" id="o3v-WP-8Kc"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlX-gY-PPQ">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Mentions Légales">
+                                    <color key="titleColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="Jdk-SR-ftZ" kind="show" id="EMN-3U-kNR"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="UlX-gY-PPQ" firstAttribute="centerX" secondItem="YXS-yo-I5u" secondAttribute="centerX" id="2te-JC-A6k"/>
+                            <constraint firstItem="hlM-ST-fSc" firstAttribute="top" secondItem="UlX-gY-PPQ" secondAttribute="bottom" constant="10" id="4pV-KF-oIb"/>
                             <constraint firstItem="hlM-ST-fSc" firstAttribute="top" secondItem="gFh-0A-5Br" secondAttribute="bottom" id="TAX-sx-jTP"/>
                             <constraint firstItem="lBu-9M-KQb" firstAttribute="centerX" secondItem="YXS-yo-I5u" secondAttribute="centerX" id="fjA-82-0Cw"/>
                             <constraint firstItem="gFh-0A-5Br" firstAttribute="top" secondItem="YXS-yo-I5u" secondAttribute="top" id="reM-6i-m2W"/>
@@ -261,6 +261,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yTf-HR-OX5">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="piA-1v-n5x"/>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wev-QD-bFV">
                             <rect key="frame" x="70" y="2" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -276,23 +277,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvf-V8-WdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3705" y="-520"/>
+            <point key="canvasLocation" x="4702.5" y="-520"/>
         </scene>
-        <!--View Controller-->
+        <!--Legal View Controller-->
         <scene sceneID="ewu-Or-LIf">
             <objects>
-                <viewController id="Jdk-SR-ftZ" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="Jdk-SR-ftZ" customClass="LegalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rtA-dY-gyh"/>
                         <viewControllerLayoutGuide type="bottom" id="EDc-DY-4od"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3Ca-sQ-rRn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h2V-eH-p0M">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2V-eH-p0M">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Cheminées VALLÉE
+                                <string key="text">Cheminées VALLÉE
 17 rue de la république 
 76000 ROUEN
 FRANCE
@@ -329,10 +330,16 @@ Malgré tous les soins apportés à la réalisation de cette application et à s
 Informatique et libertés
 Conformément aux lois en vigueur, les informations collectées par le biais de nos formulaires sont exclusivement communiquées à l’éditeur et ne sont communiqués à aucun tiers.
  
-Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes les mesures appropriées de façon à protéger ses propres données et/ou logiciels de la contamination par d’éventuels virus circulant sur le réseau Internet. L’éditeur décline toute responsabilité à un éventuel dommage survenu pendant la consultation ou après un téléchargement effectué à partir du présent site. L’utilisateur reconnaît avoir été informé que le présent site est accessible 24 h/24 et 7 j/7, à l’exception des cas de force majeure, difficultés informatiques ou difficultés techniques. Nous ne pouvons assurer la confidentialité des messages que vous pouvez nous adresser transitant par un réseau ouvert de télécommunications. Les liens vers d’autres sites/applications ne sont communiqués qu’à titre indicatif et ne sauraient en aucun cas engager la responsabilité de l’éditeur, tant en ce qui concerne leur contenu que les conditions d’accès.</mutableString>
+Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes les mesures appropriées de façon à protéger ses propres données et/ou logiciels de la contamination par d’éventuels virus circulant sur le réseau Internet. L’éditeur décline toute responsabilité à un éventuel dommage survenu pendant la consultation ou après un téléchargement effectué à partir du présent site. L’utilisateur reconnaît avoir été informé que le présent site est accessible 24 h/24 et 7 j/7, à l’exception des cas de force majeure, difficultés informatiques ou difficultés techniques. Nous ne pouvons assurer la confidentialité des messages que vous pouvez nous adresser transitant par un réseau ouvert de télécommunications. Les liens vers d’autres sites/applications ne sont communiqués qu’à titre indicatif et ne sauraient en aucun cas engager la responsabilité de l’éditeur, tant en ce qui concerne leur contenu que les conditions d’accès.</string>
                                 <color key="textColor" red="0.99206143619999998" green="0.99229151010000005" blue="0.98795562979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="Jdk-SR-ftZ" id="XwG-5p-xDo"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -340,13 +347,26 @@ Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes le
                             <constraint firstItem="h2V-eH-p0M" firstAttribute="leading" secondItem="3Ca-sQ-rRn" secondAttribute="leading" constant="10" id="ZAE-wZ-1xJ"/>
                             <constraint firstItem="EDc-DY-4od" firstAttribute="top" secondItem="h2V-eH-p0M" secondAttribute="bottom" constant="10" id="ePl-ia-B0V"/>
                             <constraint firstAttribute="trailing" secondItem="h2V-eH-p0M" secondAttribute="trailing" constant="10" id="tGW-MR-252"/>
-                            <constraint firstItem="h2V-eH-p0M" firstAttribute="top" secondItem="rtA-dY-gyh" secondAttribute="bottom" constant="10" id="ucF-2s-AMH"/>
+                            <constraint firstItem="h2V-eH-p0M" firstAttribute="top" secondItem="rtA-dY-gyh" secondAttribute="bottom" id="ucF-2s-AMH"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="nYL-7i-Mn5">
+                        <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="sKf-Hz-Vp0"/>
+                        <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TDL-rN-N9p">
+                            <rect key="frame" x="70" y="2" width="180" height="41"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="logo"/>
+                        </button>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="legalTextView" destination="h2V-eH-p0M" id="SY5-L0-AMk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3w2-fX-ur9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4408" y="-521"/>
+            <point key="canvasLocation" x="5403.75" y="-521.25"/>
         </scene>
         <!--Notification View Controller-->
         <scene sceneID="ohx-Vn-tyy">
@@ -601,7 +621,7 @@ Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes le
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IGd-pe-JBo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contact" image="contact" id="tiC-uK-9zW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6xD-0w-wXI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6xD-0w-wXI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -636,13 +656,13 @@ Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes le
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t4L-re-Lth">
-                            <rect key="frame" x="98" y="2" width="180" height="41"/>
+                            <rect key="frame" x="70" y="1.5" width="180" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="logo"/>
                         </button>
                         <barButtonItem key="rightBarButtonItem" id="Nb7-uI-jmD">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tIW-gj-u0H">
-                                <rect key="frame" x="329" y="7" width="30" height="30"/>
+                                <rect key="frame" x="274" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="refresh"/>
                                 <connections>
@@ -666,7 +686,7 @@ Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes le
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k77-xK-lWH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Espace Pro" image="espacePro" id="C8X-xR-l7f"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7UC-nG-9Tt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7UC-nG-9Tt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -685,7 +705,7 @@ Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes le
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uxy-Mh-B03" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Scan" image="QRCode" id="V4u-m7-UkZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="apR-Gq-EUZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="apR-Gq-EUZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -703,7 +723,7 @@ Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes le
             <objects>
                 <navigationController storyboardIdentifier="notifNavigation" automaticallyAdjustsScrollViewInsets="NO" id="2La-Uv-NPv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XKY-vT-LrU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XKY-vT-LrU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -715,6 +735,24 @@ Avertissement : Il appartient à l’utilisateur de ce site de prendre toutes le
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hC-Y2-olZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3705" y="144.71830985915494"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pun-HH-X3d">
+            <objects>
+                <navigationController storyboardIdentifier="LoginNavigation" automaticallyAdjustsScrollViewInsets="NO" id="sGG-Tk-jkU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lWx-HZ-mVg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DCK-sS-ZvQ" kind="relationship" relationship="rootViewController" id="mC1-hS-tw6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0XU-FX-lLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3705" y="-520"/>
         </scene>
     </scenes>
     <resources>

@@ -33,6 +33,7 @@
 
 - (IBAction)login {
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.view endEditing:YES];
     NSString *user = [self.emailField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [self.passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     

@@ -16,12 +16,14 @@
 		2C25FF791D90321D003819A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C25FF771D90321D003819A9 /* LaunchScreen.storyboard */; };
 		2C25FF841D90321D003819A9 /* ChemineesValleeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25FF831D90321D003819A9 /* ChemineesValleeTests.m */; };
 		2C25FF8F1D90321D003819A9 /* ChemineesValleeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25FF8E1D90321D003819A9 /* ChemineesValleeUITests.m */; };
+		2C4821BA1DA51EEC00F8ACEE /* LegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4821B91DA51EEC00F8ACEE /* LegalViewController.m */; };
 		2C59D4151D91EAAB00D48531 /* ActualitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59D4141D91EAAB00D48531 /* ActualitesViewController.m */; };
 		2C59D4181D91EBF500D48531 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59D4171D91EBF500D48531 /* LoginViewController.m */; };
 		2CB94B7E1D927BFB00CE8ACC /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB94B7D1D927BFB00CE8ACC /* ContactViewController.m */; };
 		2CCAF17E1D931E4100AFDCA5 /* EspaceProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCAF17D1D931E4100AFDCA5 /* EspaceProViewController.m */; };
 		2CCAF1821D9320D100AFDCA5 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCAF1811D9320D100AFDCA5 /* UIColor+CustomColors.m */; };
 		2CD189501D9AB26A006DCAFD /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD1894F1D9AB26A006DCAFD /* NotificationViewController.m */; };
+		2CD474DC1DA6A034001B7CE6 /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD474DB1DA6A034001B7CE6 /* Screen.m */; };
 		529DBEF17A59D9928DE2E0BB /* libPods-ChemineesValleeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C15CDCB0681D6CF9B88B5D46 /* libPods-ChemineesValleeTests.a */; };
 		746FF5025751A24F07E892D6 /* libPods-ChemineesValleeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A7A1DDCC969EDF9FF2C3C3 /* libPods-ChemineesValleeUITests.a */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		2C25FF8A1D90321D003819A9 /* ChemineesValleeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChemineesValleeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C25FF8E1D90321D003819A9 /* ChemineesValleeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChemineesValleeUITests.m; sourceTree = "<group>"; };
 		2C25FF901D90321D003819A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C4821B81DA51EEC00F8ACEE /* LegalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegalViewController.h; sourceTree = "<group>"; };
+		2C4821B91DA51EEC00F8ACEE /* LegalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegalViewController.m; sourceTree = "<group>"; };
 		2C59D4131D91EAAB00D48531 /* ActualitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActualitesViewController.h; sourceTree = "<group>"; };
 		2C59D4141D91EAAB00D48531 /* ActualitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActualitesViewController.m; sourceTree = "<group>"; };
 		2C59D4161D91EBF500D48531 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		2CCAF1811D9320D100AFDCA5 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		2CD1894E1D9AB26A006DCAFD /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		2CD1894F1D9AB26A006DCAFD /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		2CD474DA1DA6A034001B7CE6 /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
+		2CD474DB1DA6A034001B7CE6 /* Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen.m; sourceTree = "<group>"; };
 		3A571BC3EA9E1192147F3F5D /* Pods-ChemineesVallee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemineesVallee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChemineesVallee/Pods-ChemineesVallee.debug.xcconfig"; sourceTree = "<group>"; };
 		46C2490F538D0C40EB11D186 /* Pods-ChemineesValleeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemineesValleeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChemineesValleeTests/Pods-ChemineesValleeTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C171B31DECBF564FA068B38 /* Pods-ChemineesVallee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemineesVallee.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChemineesVallee/Pods-ChemineesVallee.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 			children = (
 				2CCAF17F1D931FB800AFDCA5 /* Common */,
 				2C67B8461D9033F9002DDBFD /* ChemineesVallee.entitlements */,
+				2C25FF771D90321D003819A9 /* LaunchScreen.storyboard */,
 				2C25FF721D90321D003819A9 /* Main.storyboard */,
 				2C25FF6C1D90321D003819A9 /* AppDelegate.h */,
 				2C25FF6D1D90321D003819A9 /* AppDelegate.m */,
@@ -147,6 +154,8 @@
 				2C59D4141D91EAAB00D48531 /* ActualitesViewController.m */,
 				2C59D4161D91EBF500D48531 /* LoginViewController.h */,
 				2C59D4171D91EBF500D48531 /* LoginViewController.m */,
+				2C4821B81DA51EEC00F8ACEE /* LegalViewController.h */,
+				2C4821B91DA51EEC00F8ACEE /* LegalViewController.m */,
 				2CD1894E1D9AB26A006DCAFD /* NotificationViewController.h */,
 				2CD1894F1D9AB26A006DCAFD /* NotificationViewController.m */,
 				2C25FF6F1D90321D003819A9 /* ScanViewController.h */,
@@ -156,7 +165,6 @@
 				2CB94B7C1D927BFB00CE8ACC /* ContactViewController.h */,
 				2CB94B7D1D927BFB00CE8ACC /* ContactViewController.m */,
 				2C25FF751D90321D003819A9 /* Assets.xcassets */,
-				2C25FF771D90321D003819A9 /* LaunchScreen.storyboard */,
 				2C25FF7A1D90321D003819A9 /* Info.plist */,
 				2C25FF691D90321D003819A9 /* Supporting Files */,
 			);
@@ -195,6 +203,8 @@
 				2CCAF1801D9320D100AFDCA5 /* UIColor+CustomColors.h */,
 				2CCAF1811D9320D100AFDCA5 /* UIColor+CustomColors.m */,
 				2CB94B811D9291EF00CE8ACC /* CustomFonts.h */,
+				2CD474DA1DA6A034001B7CE6 /* Screen.h */,
+				2CD474DB1DA6A034001B7CE6 /* Screen.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -501,10 +511,12 @@
 				2CB94B7E1D927BFB00CE8ACC /* ContactViewController.m in Sources */,
 				2C25FF6E1D90321D003819A9 /* AppDelegate.m in Sources */,
 				2C25FF6B1D90321D003819A9 /* main.m in Sources */,
+				2CD474DC1DA6A034001B7CE6 /* Screen.m in Sources */,
 				2CCAF17E1D931E4100AFDCA5 /* EspaceProViewController.m in Sources */,
 				2CD189501D9AB26A006DCAFD /* NotificationViewController.m in Sources */,
 				2C59D4151D91EAAB00D48531 /* ActualitesViewController.m in Sources */,
 				2CCAF1821D9320D100AFDCA5 /* UIColor+CustomColors.m in Sources */,
+				2C4821BA1DA51EEC00F8ACEE /* LegalViewController.m in Sources */,
 				2C59D4181D91EBF500D48531 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

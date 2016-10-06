@@ -71,7 +71,6 @@
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    NSLog(@"%@", error);
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -93,13 +92,11 @@
 
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
     //Called when a notification is delivered to a foreground app.
-    NSLog(@"Userinfo %@",notification.request.content.userInfo);
     completionHandler(UNNotificationPresentationOptionAlert);
 }
 
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler {
     //Called to let your app know which action was selected by the user for a given notification.
-    NSLog(@"Userinfo %@",response.notification.request.content.userInfo);
 }
 
 

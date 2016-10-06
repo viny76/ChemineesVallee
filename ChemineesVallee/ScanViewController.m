@@ -7,6 +7,7 @@
 //
 
 #import "ScanViewController.h"
+#import "Screen.h"
 
 @interface ScanViewController ()
 @end
@@ -32,11 +33,13 @@
     if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
         QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
         self.vc = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Annuler" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
-        self.vc.modalPresentationStyle = UIModalPresentationFormSheet;
         self.vc.delegate = self;
         __weak typeof(self) weakSelf = self;
         [self.vc setCompletionWithBlock:^(NSString *resultAsString) {
             [weakSelf.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:resultAsString]]];
+            if (![weakSelf.hud isHidden]) {
+                [weakSelf.hud removeFromSuperview];
+            }
             weakSelf.hud = [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
         }];
         
@@ -84,7 +87,12 @@
 
 - (void)displayQRCodeView {
     [self addChildViewController:self.vc];
+    CGRect newFrame = self.vc.view.frame;
+    newFrame.size.width = [Screen width];
+    newFrame.size.height = self.view.frame.size.height;
+    [self.vc.view setFrame:newFrame];
     [self.view addSubview:self.vc.view];
+    self.view.center = self.view.superview.center;
     [self.vc didMoveToParentViewController:self];
     self.tabBarController.delegate = self;
 }

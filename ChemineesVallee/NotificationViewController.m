@@ -35,7 +35,6 @@
     if (self.notificationText.text.length > 0 || self.notificationText.text != nil || ![self.notificationText.text isEqual:@""]) {
         [PFCloud callFunctionInBackground:@"pushMessageNotification" withParameters:@{@"message" : self.notificationText.text} block:^(id object, NSError *error) {
             if (!error) {
-                NSLog(@"YES");
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Succès" message:@"Message envoyé !" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 [alert show];
             } else {
