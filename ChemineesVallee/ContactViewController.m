@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBarController.delegate = self;
-    int zoom;
+    int zoom = 0;
     self.marker = [[GMSMarker alloc] init];
     [self displayShowroom:zoom];
 }
@@ -78,7 +78,7 @@
 
 - (IBAction)segmentSwitch:(UISegmentedControl *)sender {
     NSInteger selectedSegment = sender.selectedSegmentIndex;
-    int zoom;
+    int zoom = 0;
     
     if (selectedSegment == 0) {
         [self displayShowroom:zoom];
